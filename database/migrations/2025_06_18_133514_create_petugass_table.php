@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('petugass', function (Blueprint $table) {
             $table->id();
-            $table->integer('nip_petugas');
+            $table->string('nip_petugas')->unique();
             $table->string('nama_petugas',100);
             $table->string('jabatan_petugas',100);
             $table->timestamps();
