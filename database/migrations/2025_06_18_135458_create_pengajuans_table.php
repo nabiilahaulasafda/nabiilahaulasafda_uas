@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nim_mahasiswa',100)->unique();
             $table->string('nama_mahasiswa',100);
             $table->date('ttl_mahasiswa');
-            $table->string('hp_mahasiswa');
+            $table->string('hp_mahasiswa',100);
             $table->string('email_mahasiswa',100);
             $table->string('alamat_mahasiswa',100);
             $table->string('asal_kampus',100);

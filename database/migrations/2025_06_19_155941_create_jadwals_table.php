@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('jadwals', function (Blueprint $table) {
             $table->id();
             $table->string('nim_mahasiswa',100);
-            $table->foreign('nim_mahasiswa')->references('nim_mahasiswa')->on('mahasiswa')->onDelete('cascade');
+            $table->foreign('nim_mahasiswa')->references('nim_mahasiswa')->on('pengajuans')->onDelete('cascade');
             $table->string('nip_petugas',100);
-            $table->foreign('nip_petugas')->references('nip_petugas')->on('petugas')->onDelete('cascade');
+            $table->foreign('nip_petugas')->references('nip_petugas')->on('petugass')->onDelete('cascade');
             $table->string('jadwal',100);
             $table->date('tgl_mulaimagang');
             $table->date('tgl_selesaimagang');
