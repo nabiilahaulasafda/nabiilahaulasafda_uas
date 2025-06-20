@@ -12,16 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('sertifikats', function (Blueprint $table) {
-            $table->id();
-            $table->string('no_sertifikat',100)->unique();
-            $table->string('nim_mahasiswa',100);
-            $table->foreign('nim_mahasiswa')->references('nim_mahasiswa')->on('pengajuans')->onDelete('cascade');
-            $table->string('nip_petugas',100);
-            $table->foreign('nip_petugas')->references('nip_petugas')->on('petugass')->onDelete('cascade');
-            $table->string('file_sertifikat')->nullable();
-            $table->timestamps();
+        $table->id(); // ini otomatis auto increment dan primary key
+        $table->string('no_sertifikat', 100);
+        $table->bigInteger('pengajuans_id');
+        $table->bigInteger('petugass_id'); // hilangkan autoIncrement()
+        $table->string('file_sertifikat')->nullable();
+        $table->timestamps();
+});
 
-        });
     }
 
     /**
