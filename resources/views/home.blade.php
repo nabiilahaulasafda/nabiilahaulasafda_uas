@@ -1,4 +1,18 @@
-@extends('layouts.app')
+@extends('layouts.template')
+@section('title')
+    Halaman Dashboard
+@endsection
+
+@section('headline')
+    Dashboard
+@endsection
+
+@section('content')
+    Halaman Dashboard ini ya
+@endsection
+
+
+{{-- @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -20,4 +34,4 @@
         </div>
     </div>
 </div>
-@endsection
+@endsection --}}
