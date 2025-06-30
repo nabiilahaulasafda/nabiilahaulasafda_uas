@@ -18,6 +18,8 @@
 	<title> @yield('title') </title>
 
 	<link href={{ asset('css/app.css') }} rel="stylesheet">
+    {{-- <link rel="stylesheet" href={{asset('css/bootstrap.min.css')}}> --}}
+    <link rel="stylesheet" href={{ asset('css/all.css') }}>
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
@@ -73,12 +75,12 @@
 					</li>
 
 					<li class="sidebar-item {{ request()->is('pengajuan') ? 'active' : '' }}">
-						<a class="sidebar-link active" href="/pengajuan">
+						<a class="sidebar-link" href="/pengajuan">
               <i class="align-middle" data-feather="user"></i> <span class="align-middle">Pengajuan</span>
             </a>
 					</li>
 
-					<li class="sidebar-item {{ request()->is('pengajuan') ? 'active' : '' }}">
+					<li class="sidebar-item {{ request()->is('jadwal') ? 'active' : '' }}">
 						<a class="sidebar-link" href="pages-sign-in.html">
               <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Jadwal</span>
             </a>
@@ -326,6 +328,9 @@
 	</div>
 
 	<script src={{ asset('js/app.js') }}></script>
+    <script src={{asset('js/all.js')}}></script>
+    {{-- <script src={{asset('js/bootstrap.min.js')}}></script>
+    <script src={{asset('js/bootstrap.bundle.min.js')}}></script> --}}
 
 </body>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pengajuan;
 
 class pengajuanController extends Controller
 {
@@ -11,7 +12,9 @@ class pengajuanController extends Controller
      */
     public function index()
     {
-        //
+        // menampilkan data pengajuan
+        $pengajuan = Pengajuan::all();
+        return view('pengajuan.index',compact('pengajuan'));
     }
 
     /**
@@ -19,7 +22,8 @@ class pengajuanController extends Controller
      */
     public function create()
     {
-        //
+        //menampilkan form add data pengajuan
+        return view('pengajuan.add');
     }
 
     /**
@@ -27,7 +31,20 @@ class pengajuanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // proses tambah
+        $pengajuan = new Pengajuan;
+        $pengajuan->nim_mahasiswa = $request->nim_mahasiswa;
+        $pengajuan->nama_mahasiswa = $request->nama_mahasiswa;
+        $pengajuan->tanggallahir_mahasiswa = $request->tanggallahir_mahasiswa;
+        $pengajuan->tempatlahir_mahasiswa = $request->tempatlahir_mahasiswa;
+        $pengajuan->hp_mahasiswa = $request->hp_mahasiswa;
+        $pengajuan->email_mahasiswa = $request->email_mahasiswa;
+        $pengajuan->alamat_mahasiswa = $request->alamat_mahasiswa;
+        $pengajuan->asal_kampus = $request->asal_kampus;
+        $pengajuan->file_suratpermohonan = $request->file_suratpermohonan;
+        $pengajuan->save();
+
+        return redirect('/pengajuan');
     }
 
     /**
@@ -35,7 +52,9 @@ class pengajuanController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // menampilkan data detail
+        $pengajuan = Pengajuan::find($id); // cari data berdasarkan id
+        return view('pengajuan.open', compact('pengajuan'));
     }
 
     /**
@@ -43,7 +62,9 @@ class pengajuanController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        //tampilan edit
+        $pengajuan = Pengajuan::find($id);
+        return view('pengajuan.edit',compact('pengajuan'));
     }
 
     /**
@@ -51,7 +72,20 @@ class pengajuanController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        //proses edit
+        $pengajuan = Pengajuan::find($id);
+        $pengajuan->nim_mahasiswa = $request->nim_mahasiswa;
+        $pengajuan->nama_mahasiswa = $request->nama_mahasiswa;
+        $pengajuan->tanggallahir_mahasiswa = $request->tanggallahir_mahasiswa;
+        $pengajuan->tempatlahir_mahasiswa = $request->tempatlahir_mahasiswa;
+        $pengajuan->hp_mahasiswa = $request->hp_mahasiswa;
+        $pengajuan->email_mahasiswa = $request->email_mahasiswa;
+        $pengajuan->alamat_mahasiswa = $request->alamat_mahasiswa;
+        $pengajuan->asal_kampus = $request->asal_kampus;
+        $pengajuan->file_suratpermohonan = $request->file_suratpermohonan;
+        $pengajuan->save();
+
+        return redirect('/pengajuan');
     }
 
     /**
