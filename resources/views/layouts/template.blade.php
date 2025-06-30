@@ -19,6 +19,38 @@
 
 	<link href={{ asset('css/app.css') }} rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+    .content-bg {
+        background-image: url("{{ asset('img/y.jpg') }}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: calc(100vh - 120px); /* tinggi konten tanpa header + footer */
+        padding: 2rem;
+        color: white;
+    }
+
+    .card-transparan {
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        border: 1px solid white;
+        border-radius: 10px;
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    main.content {
+        margin: 0;
+        padding: 0;
+    }
+
+    h2.dashboard-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+    }
+</style>
 </head>
 
 <body>
@@ -34,33 +66,27 @@
 						Pages
 					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="index.html">
+					<li class="sidebar-item {{ request()->is('beranda') ? 'active' : '' }}">
+						<a class="sidebar-link" href="/beranda">
               <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Beranda</span>
             </a>
 					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-profile.html">
+					<li class="sidebar-item {{ request()->is('pengajuan') ? 'active' : '' }}">
+						<a class="sidebar-link active" href="/pengajuan">
               <i class="align-middle" data-feather="user"></i> <span class="align-middle">Pengajuan</span>
             </a>
 					</li>
 
-					<li class="sidebar-item">
+					<li class="sidebar-item {{ request()->is('pengajuan') ? 'active' : '' }}">
 						<a class="sidebar-link" href="pages-sign-in.html">
               <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Jadwal</span>
             </a>
 					</li>
 
-					<li class="sidebar-item">
+					<li class="sidebar-item {{ request()->is('sertifikat') ? 'active' : '' }}">
 						<a class="sidebar-link" href="pages-sign-up.html">
               <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Sertifikat</span>
-            </a>
-					</li>
-
-					<li class="sidebar-item active">
-						<a class="sidebar-link" href="pages-blank.html">
-              <i class="align-middle" data-feather="book"></i> <span class="align-middle">Blank</span>
             </a>
 					</li>
 
@@ -84,10 +110,10 @@
 		<div class="main">
 			<nav class="navbar navbar-expand navbar-light navbar-bg">
 				<a class="sidebar-toggle js-sidebar-toggle">
-          <i class="hamburger align-self-center"></i>
-        </a>
+          <i class="hamburger align-self-center"></i></a>
 
 				<div class="navbar-collapse collapse">
+                    <h2 class="navbar-nav navbar-text">@yield('headline')</h2>
 					<ul class="navbar-nav navbar-align">
 						<li class="nav-item dropdown">
 							<a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
@@ -238,7 +264,7 @@
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="{{ route('logout') }}"Add commentMore actions
                                     onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
+                                          document.getElementById('logout-form').submit();">
                                     {{ __('logout') }}
                                 </a>
 
@@ -253,9 +279,6 @@
 
 			<main class="content">
 				<div class="container-fluid p-0">
-
-					<h1>@yield('headline')</h1>
-
 					{{-- <div class="row">
 						<div class="col-12">
 							<div class="card">

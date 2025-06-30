@@ -8,6 +8,8 @@
 @endsection
 
 @section('content')
+
+ <div class="content-bg">
      <div class="card">
         <div class="card-header">
           <h3 class="card-title">Title</h3>
@@ -27,6 +29,7 @@
         <!-- /.card-body -->
         <div class="card-footer">
           Footer
+        </div>
         </div>
 @endsection
 

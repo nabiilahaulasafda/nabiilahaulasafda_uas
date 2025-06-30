@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\berandaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,13 @@ Route::get('/cektemplate', function () {
     return view('layouts.template');
 });
 
+Route::get('/index', function () {
+    return view('beranda.index');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Data Beranda
+Route::get('/beranda', [berandaController::class, 'index']);
