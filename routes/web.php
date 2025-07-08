@@ -50,4 +50,5 @@ Route::put('/pengajuan/{id}', [pengajuanController::class, 'update']);
 
 // Data Jadwal
 Route::get('/jadwal', [jadwalController::class, 'index']);
-Route::get('/jadwal/open', [jadwalController::class, 'show']);
+Route::get('/jadwal/add', [jadwalController::class, 'create']);
+// Route::get('/jadwal/open', [jadwalController::class, 'show']);

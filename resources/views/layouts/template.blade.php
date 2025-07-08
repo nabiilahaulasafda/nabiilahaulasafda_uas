@@ -298,7 +298,7 @@
 						</div>
 					</div> --}}
                     {{-- <div class="content-bg"> --}}
-                        <div class="container center col-8">
+                        <div class="container center col-12">
                         <div class="container-fluid">
                         <div class="card" style="border: none">
                             <div class="card-header gradient-nav">

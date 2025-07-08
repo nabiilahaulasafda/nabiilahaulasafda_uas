@@ -23,6 +23,7 @@ class jadwalController extends Controller
     public function create()
     {
         //
+        return view('jadwal.add');
     }
 
     /**
