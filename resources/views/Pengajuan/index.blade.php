@@ -18,8 +18,8 @@
                     <thead>
                         <tr>
                             <th class="fs-4" scope="col">NO</th>
-                            <th class="fs-4" scope="col">NIM</th>
-                            <th class="fs-4" scope="col">NAMA</th>
+                            <th class="fs-4" scope="col">NIM MAHASISWA</th>
+                            <th class="fs-4" scope="col">NAMA MAHASISWA</th>
                             <th class="fs-4" scope="col">EMAIL</th>
                             <th class="fs-4 text-end" scope="col">ACTION</th>
                         </tr>

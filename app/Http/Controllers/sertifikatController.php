@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Sertifikat;
 
 class sertifikatController extends Controller
 {
@@ -12,6 +13,8 @@ class sertifikatController extends Controller
     public function index()
     {
         //
+        $sertifikat = Sertifikat::all();
+        return view('sertifikat.index',compact('sertifikat'));
     }
 
     /**
@@ -20,6 +23,7 @@ class sertifikatController extends Controller
     public function create()
     {
         //
+        return view('sertifikat.add');
     }
 
     /**

@@ -52,3 +52,7 @@ Route::put('/pengajuan/{id}', [pengajuanController::class, 'update']);
 Route::get('/jadwal', [jadwalController::class, 'index']);
 Route::get('/jadwal/add', [jadwalController::class, 'create']);
 // Route::get('/jadwal/open', [jadwalController::class, 'show']);
+
+// Data Sertifikat
+Route::get('/sertifikat', [sertifikatController::class, 'index']);
+Route::get('/sertifikat/add', [sertifikatController::class, 'create']);
