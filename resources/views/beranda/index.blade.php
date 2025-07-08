@@ -8,11 +8,9 @@
 @endsection
 
 @section('content')
- <div class="content-bg">
-    <div class="container-fluid">
+    {{-- <div class="container-fluid"> --}}
         <div class="card-transparan text-center">
                 <h1>HALO ADMIN!</h1>
-                <p><strong>Cuaca Saat Ini:</strong> <span id="weather">Loading...</span></p>
                 <p><strong>Tanggal:</strong> <span id="date"></span></p>
             </div>
 
@@ -36,25 +34,6 @@
             let now = new Date();
             let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
             document.getElementById('date').innerText = now.toLocaleDateString('id-ID', options);
-        }
-
-        // Mengambil Cuaca dari API (Ganti API_KEY dengan API asli dari OpenWeather)
-        function fetchWeather() {
-            let apiKey = "YOUR_OPENWEATHER_API_KEY";
-            let city = "Jakarta"; // Ubah sesuai lokasi
-            let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-            fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                let temp = data.main.temp;
-                let weatherDesc = data.weather[0].description;
-                document.getElementById('weather').innerText = `${temp}°C, ${weatherDesc}`;
-            })
-            .catch(error => {
-                console.error("Gagal mengambil data cuaca", error);
-                document.getElementById('weather').innerText = "Tidak tersedia";
-            });
         }
 
         // Jalankan fungsi saat halaman dimuat

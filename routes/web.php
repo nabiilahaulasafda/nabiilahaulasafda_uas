@@ -18,19 +18,19 @@ use App\Http\Controllers\sertifikatController;
 */
 
 Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/home', function () {
-    return view('home');
+    return view('beranda.index');
 })->middleware('auth');;
 
-Route::get('/cektemplate', function () {
-    return view('layouts.template');
-});
+// Route::get('/home', function () {
+//     return view('home');
+// })->middleware('auth');;
+
+// Route::get('/cektemplate', function () {
+//     return view('layouts.template');
+// });
 
 Route::get('/index', function () {
-    return view('pengajuan.add');
+    return view('jadwal.open');
 });
 
 Auth::routes();
@@ -47,3 +47,7 @@ Route::post('/pengajuan', [pengajuanController::class, 'store']);
 Route::get('/pengajuan/open/{id}', [pengajuanController::class, 'show']);
 Route::get('/pengajuan/edit/{id}', [pengajuanController::class, 'edit']);
 Route::put('/pengajuan/{id}', [pengajuanController::class, 'update']);
+
+// Data Jadwal
+Route::get('/jadwal', [jadwalController::class, 'index']);
+Route::get('/jadwal/open', [jadwalController::class, 'show']);

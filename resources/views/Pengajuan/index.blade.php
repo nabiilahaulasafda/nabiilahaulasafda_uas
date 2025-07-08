@@ -8,10 +8,6 @@
 @endsection
 
 @section('content')
- <div class="content-bg">
-    <div class="container center col-8">
-    <div class="card" style="border: none">
-        <div class="card-header gradient-nav">
               <h2 class=" float-start"> DAFTAR PENGAJUAN </h2>
               <span class="float-end btn btn-primary text-end btn-md" type="button" id="button-addon2">
                 <a class="nav-link" href="pengajuan/add"> <i class="fa fa-user-plus"></i> Add </a>

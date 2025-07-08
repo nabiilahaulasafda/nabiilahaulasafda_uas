@@ -30,7 +30,6 @@
         background-repeat: no-repeat;
         min-height: calc(100vh - 120px); /* tinggi konten tanpa header + footer */
         padding: 2rem;
-        color: white;
     }
 
     .card-transparan {
@@ -45,6 +44,12 @@
     main.content {
         margin: 0;
         padding: 0;
+        background-image: url("{{ asset('img/y.jpg') }}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: calc(100vh - 120px); /* tinggi konten tanpa header + footer */
+        padding: 2rem;
     }
 
     h2.dashboard-title {
@@ -81,13 +86,13 @@
 					</li>
 
 					<li class="sidebar-item {{ request()->is('jadwal') ? 'active' : '' }}">
-						<a class="sidebar-link" href="pages-sign-in.html">
+						<a class="sidebar-link" href="/jadwal">
               <i class="align-middle" data-feather="check-square"></i> <span class="align-middle">Jadwal</span>
             </a>
 					</li>
 
 					<li class="sidebar-item {{ request()->is('sertifikat') ? 'active' : '' }}">
-						<a class="sidebar-link" href="pages-sign-up.html">
+						<a class="sidebar-link" href="/sertifikat">
               <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Sertifikat</span>
             </a>
 					</li>
@@ -292,8 +297,17 @@
 							</div>
 						</div>
 					</div> --}}
+                    {{-- <div class="content-bg"> --}}
+                        <div class="container center col-8">
+                        <div class="container-fluid">
+                        <div class="card" style="border: none">
+                            <div class="card-header gradient-nav">
                     @yield('content')
 
+				</div>
+				</div>
+				</div>
+				</div>
 				</div>
 			</main>
 
