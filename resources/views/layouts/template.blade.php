@@ -66,8 +66,10 @@
 		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" href="index.html">
-          <span class="align-middle">AdminKit</span>
-        </a>
+                    <div></div>
+                    <img src={{ asset('img/lgoo.png') }} alt="Logo" class="img-fluid" width="50" height="50">
+                </a>
+                <div class="text-center">Dewan Perwakilan R A</div>
 
 				<ul class="sidebar-nav">
 					<li class="sidebar-header">
