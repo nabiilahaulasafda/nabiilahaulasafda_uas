@@ -5,6 +5,7 @@ use App\Http\Controllers\berandaController;
 use App\Http\Controllers\pengajuanController;
 use App\Http\Controllers\jadwalController;
 use App\Http\Controllers\sertifikatController;
+use App\Http\Controllers\petugasController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,3 +58,12 @@ Route::get('/jadwal/add', [jadwalController::class, 'create']);
 // Data Sertifikat
 Route::get('/sertifikat', [sertifikatController::class, 'index']);
 Route::get('/sertifikat/add', [sertifikatController::class, 'create']);
+
+// Data Petugas
+Route::get('/petugas', [petugasController::class, 'index']);
+Route::get('/petugas/add', [petugasController::class, 'create']);
+Route::post('/petugas', [petugasController::class, 'store']);
+Route::get('/petugas/open/{id}', [petugasController::class, 'show']);
+Route::get('/petugas/edit/{id}', [petugasController::class, 'edit']);
+Route::put('/petugas/{id}', [petugasController::class, 'update']);
+Route::delete('/petugas/delete/{id}', [petugasController::class, 'destroy']);

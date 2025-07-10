@@ -99,8 +99,8 @@
             </a>
 					</li>
 
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="pages-sign-in.html">
+					<li class="sidebar-item {{ request()->is('petugas') ? 'active' : '' }}">
+						<a class="sidebar-link" href="/petugas">
               <i class="fa-solid fa-user"></i><span class="align-middle">Petugas</span>
             </a>
 					</li>
