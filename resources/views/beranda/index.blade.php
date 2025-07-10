@@ -1,6 +1,6 @@
 @extends('layouts.template')
 @section('title')
-    Halaman Dashboard
+    Halaman Beranda
 @endsection
 
 @section('headline')

@@ -8,13 +8,19 @@
 @endsection
 
 @section('content')
-            <h2 class=" float-start"> DAFTAR JADWAL </h2>
-              <span class="float-end btn btn-primary text-end btn-md" type="button" id="button-addon2">
-                <a class="nav-link" href="jadwal/add"> <i class="fa fa-user-plus"></i> Add </a>
-                </span>
-        </div>
         <div class="card-body">
-            <div class="row g-3 ">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+            <input class="form-control me-2" style="max-width: 300px;" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+            <datalist id="datalistOptions">
+            @foreach($jadwal as $data)
+                <option value="{{ $data->nim_mahasiswa }}">
+            @endforeach
+            </datalist>
+
+            <a href="jadwal/add" class="btn btn-primary btn-md d-flex align-items-center">
+            <i class="fa fa-user-plus me-1"></i> Add
+            </a>
+        </div>
                 <table class="table table-striped">
                     <thead>
                         <tr>
@@ -22,7 +28,7 @@
                             <th class="fs-4" scope="col">NIM MAHASISWA</th>
                             <th class="fs-4" scope="col">TANGGAL MULAI</th>
                             <th class="fs-4" scope="col">TANGGAL SELESAI</th>
-                            <th class="fs-4 text-end" scope="col">ACTION</th>
+                            <th class="fs-4" scope="col">ACTION</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34,8 +40,8 @@
                                 <td> 20-28-2005</td>
                                 {{-- <td>{{ $loop->iteration }}</td> --}}
                                 {{-- <td>{{$data->pengajuans_id}}</td> --}}
-                                <td class="text-end"> <button class="btn btn-outline-dark" type="button" id="button-addon2"><a class="nav-link"  href="/jadwal/open"> <i class="fa-solid fa-folder-open"></i> </a> </button>
-                                                      <button class="btn btn-outline-dark" type="button" id="button-addon2"><a class="nav-link"  href="/jadwal/edit"> <i class="fa-solid fa-pen"></i> </a> </button>
+                                <td> <button class="btn btn-outline-dark  btn-sm" type="button" id="button-addon2"><a class="nav-link"  href="/jadwal/open"> <i class="fa-solid fa-folder-open"></i> </a> </button>
+                                     <button class="btn btn-outline-dark  btn-sm" type="button" id="button-addon2"><a class="nav-link"  href="/jadwal/edit"> <i class="fa-solid fa-pen"></i> </a> </button>
                                 </td>
                             </tr>
                     </tbody>

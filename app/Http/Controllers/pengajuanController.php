@@ -94,5 +94,9 @@ class pengajuanController extends Controller
     public function destroy(string $id)
     {
         //
+        $pengajuan = Pengajuan::find($id);
+        $pengajuan->delete();
+
+        return redirect('/pengajuan');
     }
 }

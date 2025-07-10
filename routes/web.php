@@ -47,6 +47,7 @@ Route::post('/pengajuan', [pengajuanController::class, 'store']);
 Route::get('/pengajuan/open/{id}', [pengajuanController::class, 'show']);
 Route::get('/pengajuan/edit/{id}', [pengajuanController::class, 'edit']);
 Route::put('/pengajuan/{id}', [pengajuanController::class, 'update']);
+Route::delete('/pengajuan/delete/{id}', [pengajuanController::class, 'destroy']);
 
 // Data Jadwal
 Route::get('/jadwal', [jadwalController::class, 'index']);
