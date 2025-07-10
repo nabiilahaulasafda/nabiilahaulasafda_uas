@@ -67,9 +67,8 @@
 			<div class="sidebar-content js-simplebar">
 				<a class="sidebar-brand" href="index.html">
                     <div></div>
-                    <img src={{ asset('img/lgoo.png') }} alt="Logo" class="img-fluid" width="50" height="50">
+                    <img src={{ asset('img/lgoo.png') }} alt="Logo" class="rounded mx-auto d-block" width="50" height="50">  <div class="text-center"> Dewan Perwakilan Rakyat Aceh </div>
                 </a>
-                <div class="text-center">Dewan Perwakilan R A</div>
 
 				<ul class="sidebar-nav">
 					<li class="sidebar-header">

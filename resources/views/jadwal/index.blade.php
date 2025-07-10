@@ -42,19 +42,17 @@
                                 {{-- <td>{{$data->pengajuans_id}}</td> --}}
                                 <td> <button class="btn btn-outline-dark  btn-sm" type="button" id="button-addon2"><a class="nav-link"  href="/jadwal/open"> <i class="fa-solid fa-folder-open"></i> </a> </button>
                                      <button class="btn btn-outline-dark  btn-sm" type="button" id="button-addon2"><a class="nav-link"  href="/jadwal/edit"> <i class="fa-solid fa-pen"></i> </a> </button>
+                                     <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#modalHapus $data->id }}" title="Hapus">
+                                        <i class="fa-solid fa-trash"></i>
+                                     </button>
                                 </td>
                             </tr>
-                    </tbody>
                      {{-- @empty
                             tidak ada data
                      @endforelse --}}
+                      </tbody>
                 </table>
-
             </div>
-        </div>
-    </div>
-</div>
-
 
 @endsection
 
