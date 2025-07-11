@@ -54,7 +54,7 @@ Route::delete('/pengajuan/delete/{id}', [pengajuanController::class, 'destroy'])
 Route::get('/jadwal', [jadwalController::class, 'index']);
 Route::get('/jadwal/add', [jadwalController::class, 'create']);
 Route::post('/jadwal', [jadwalController::class, 'store']);
-// Route::get('/jadwal/open', [jadwalController::class, 'show']);
+// Route::get('/jadwa', [jadwalController::class, 'show']);
 
 // Data Sertifikat
 Route::get('/sertifikat', [sertifikatController::class, 'index']);

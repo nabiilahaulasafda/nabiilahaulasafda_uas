@@ -17,7 +17,7 @@
             @endforeach
             </datalist>
 
-            <a href="sertifikat/add" class="btn btn-primary btn-md d-flex align-items-center">
+            <a href="/sertifikat/add" class="btn btn-primary btn-md d-flex align-items-center">
             <i class="fa fa-user-plus me-1"></i> Add
             </a>
         </div>
