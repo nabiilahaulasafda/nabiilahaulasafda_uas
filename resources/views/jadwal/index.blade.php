@@ -32,14 +32,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {{-- @forelse ( $jadwal as $data ) --}}
+                        @forelse ( $jadwal as $data )
                             <tr>
-                                 <td> 1 </td>
-                                <td> 1234567 </td>
-                                <td> 16-28-2006 </td>
-                                <td> 20-28-2005</td>
-                                {{-- <td>{{ $loop->iteration }}</td> --}}
-                                {{-- <td>{{$data->pengajuans_id}}</td> --}}
+                                <td>{{$loop->iteration }}</td>
+                                <td>{{$data->pengajuans->nim_mahasiswa}}</td>
+                                <td>{{$data->tanggal_mulai}}</td>
+                                <td>{{$data->tanggal_selesai}}</td>
                                 <td> <button class="btn btn-outline-dark  btn-sm" type="button" id="button-addon2"><a class="nav-link"  href="/jadwal/open"> <i class="fa-solid fa-folder-open"></i> </a> </button>
                                      <button class="btn btn-outline-dark  btn-sm" type="button" id="button-addon2"><a class="nav-link"  href="/jadwal/edit"> <i class="fa-solid fa-pen"></i> </a> </button>
                                      <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#modalHapus $data->id }}" title="Hapus">
@@ -47,13 +45,14 @@
                                      </button>
                                 </td>
                             </tr>
-                     {{-- @empty
-                            tidak ada data
-                     @endforelse --}}
-                      </tbody>
-                </table>
-            </div>
-
+                      @empty
+                <tr>
+                    <td colspan="5" class="text-center">Tidak ada data</td>
+                </tr>
+                @endforelse
+            </tbody>
+        </table>
+    </div>
 @endsection
 
 

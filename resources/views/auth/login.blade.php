@@ -82,6 +82,8 @@
 		</div>
 	</main>
 
+
+
 	<script src={{ asset ('js/app.js') }}></script>
 
 </body>
@@ -161,3 +163,4 @@
     </div>
 </div>
 @endsection --}}
+

@@ -53,11 +53,13 @@ Route::delete('/pengajuan/delete/{id}', [pengajuanController::class, 'destroy'])
 // Data Jadwal
 Route::get('/jadwal', [jadwalController::class, 'index']);
 Route::get('/jadwal/add', [jadwalController::class, 'create']);
+Route::post('/jadwal', [jadwalController::class, 'store']);
 // Route::get('/jadwal/open', [jadwalController::class, 'show']);
 
 // Data Sertifikat
 Route::get('/sertifikat', [sertifikatController::class, 'index']);
 Route::get('/sertifikat/add', [sertifikatController::class, 'create']);
+Route::post('/sertifikat', [sertifikatController::class, 'store']);
 
 // Data Petugas
 Route::get('/petugas', [petugasController::class, 'index']);

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Jadwal;
+use App\Models\Pengajuan;
+use App\Models\Petugas;
 
 class jadwalController extends Controller
 {
@@ -23,7 +25,9 @@ class jadwalController extends Controller
     public function create()
     {
         //
-        return view('jadwal.add');
+        $pengajuan = Pengajuan::all();
+        $petugas = Petugas::all();
+        return view('jadwal.add',compact('pengajuan','petugas'));
     }
 
     /**
@@ -32,6 +36,21 @@ class jadwalController extends Controller
     public function store(Request $request)
     {
         //
+        $jadwal = new Jadwal;
+        $jadwal->petugass_id = $request->petugas;
+        $jadwal->pengajuans_id = $request->pengajuan;
+        $jadwal->nama_petugas = $request->nama_petugas;
+        $jadwal->jadwal = $request->jadwal;
+        $jadwal->tgl_mulaimagang = $request->tgl_mulaimagang;
+        $jadwal->tgl_selesaimagang = $request->tgl_selesaimagang;
+        $jadwal->senin = $request->senin;
+        $jadwal->selasa = $request->selasa;
+        $jadwal->rabu = $request->rabu;
+        $jadwal->kamis = $request->kamis;
+        $jadwal->jumat = $request->jumat;
+        $jadwal->save();
+
+        return redirect('/jadwal');
     }
 
     /**

@@ -16,22 +16,35 @@
             <div class="card-body">
                 <div class="row g-3 ">
                         <div class="col mt-3 mx-3">
-                            <form class="p-3">
+                           <form action="/jadwal" method="POST">
+                                @csrf
                                 <div class="mb-3">
-                                    <label for="" class="form-label">NIP Petugas</label>
-                                    <input type="text" id="disabledTextInput" class="form-control" placeholder="">
+                                    <label for="exampleInputPassword1" class="form-label">Nip Petugas</label>
+                                    <select name="rumpun" id="" class="form-control">
+                                        <option value="">-Pilih-</option>
+                                        @foreach ($petugas as $item1)
+                                            <option value="{{$item1->id}}">{{$item1->nip_petugas}}</option>
+                                        @endforeach
+
+                                    </select>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="" class="form-label">Nim Mahasiswa</label>
-                                    <input type="text" id="disabledTextInput" class="form-control" placeholder="">
+                                    <label for="exampleInputPassword1" class="form-label">Nim Mahasiswa</label>
+                                    <select name="nim_mahasiswa" id="" class="form-control">
+                                        <option value="">-Pilih-</option>
+                                        @foreach ($pengajuan as $item2)
+                                            <option value="{{$item2->id}}">{{$item2->nim_mahasiswa}}</option>
+                                        @endforeach
+
+                                    </select>
                                 </div>
                                 <div class="mb-3">
                                     <label for="" class="form-label"> Tanggal Mulai Magang</label>
-                                    <input type="date" id="disabledTextInput" class="form-control" placeholder="">
+                                    <input type="date"  name="tgl_mulaimagang" id="disabledTextInput" class="form-control" placeholder="">
                                 </div>
                                 <div class="mb-3">
                                     <label for="" class="form-label">Tanggal Selesai Magang</label>
-                                    <input type="date" id="disabledTextInput" class="form-control" placeholder="">
+                                    <input type="date" name="tgl_selesaimagang"  id="disabledTextInput" class="form-control" placeholder="">
                                 </div>
                             </form>
                         </div>
@@ -39,26 +52,26 @@
                             <form class="p-3">
                                 <div class="mb-3">
                                     <label for="disabledTextInput" class="form-label">Senin</label>
-                                    <input type="text" id="disabledTextInput" class="form-control" placeholder="">
+                                    <input type="text" name="senin" id="disabledTextInput" class="form-control" placeholder="">
                                 </div>
                                 <div class="mb-3">
                                     <label for="disabledTextInput" class="form-label">Selasa</label>
-                                    <input type="text" id="disabledTextInput" class="form-control" placeholder="">
+                                    <input type="text" name="selasa" id="disabledTextInput" class="form-control" placeholder="">
                                 </div>
                                 <div class="mb-3">
                                     <label for="disabledTextInput" class="form-label">Rabu</label>
-                                    <input type="text" id="disabledTextInput" class="form-control" placeholder="">
+                                    <input type="text" name="rabu" id="disabledTextInput" class="form-control" placeholder="">
                                 </div>
                                 <div class="mb-3">
                                     <label for="disabledTextInput" class="form-label">Kamis</label>
-                                    <input type="text" id="disabledTextInput" class="form-control" placeholder="">
+                                    <input type="text" name="kamis" id="disabledTextInput" class="form-control" placeholder="">
                                 </div>
                                 <div class="mb-3">
                                     <label for="disabledTextInput" class="form-label">Jumat</label>
-                                    <input type="text" id="disabledTextInput" class="form-control" placeholder="">
+                                    <input type="text" name="jumat" id="disabledTextInput" class="form-control" placeholder="">
                                 </div>
                                 <div>
-                                    <button class="btn btn-outline-secondary" type="button" id="button-addon2"> <a class="nav-link" href="/jadwal"> Submit </a> </button>
+                                    <button type="submit" class="btn btn-primary">Tambah</button>
                                     <button class="btn btn-outline-secondary" type="button" id="button-addon2"> <a class="nav-link" href="/jadwal"> Tutup </a> </button>
                                 </div>
                             </form>

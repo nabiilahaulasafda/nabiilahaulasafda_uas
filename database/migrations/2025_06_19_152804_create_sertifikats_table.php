@@ -15,7 +15,7 @@ return new class extends Migration
         $table->id(); // ini otomatis auto increment dan primary key
         $table->string('no_sertifikat', 100);
         $table->bigInteger('pengajuans_id');
-        $table->bigInteger('petugass_id'); // hilangkan autoIncrement()
+        $table->bigInteger('petugass_id');
         $table->string('file_sertifikat')->nullable();
         $table->timestamps();
 });

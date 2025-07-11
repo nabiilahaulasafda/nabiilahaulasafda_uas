@@ -13,7 +13,7 @@
             <input class="form-control me-2" style="max-width: 300px;" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
             <datalist id="datalistOptions">
             @foreach($sertifikat as $data)
-                <option value="{{ $data->nim_mahasiswa }}">
+                <option value="{{ $data->no_sertifikat }}">
             @endforeach
             </datalist>
 
@@ -25,19 +25,19 @@
                     <thead>
                         <tr>
                             <th class="fs-4" scope="col">NO</th>
-                            <th class="fs-4" scope="col">NIM MAHASISWA</th>
                             <th class="fs-4" scope="col">NO SERTIFIKAT</th>
+                            <th class="fs-4" scope="col">NIM MAHASISWA</th>
+                            <th class="fs-4" scope="col">NIP PETUGAS</th>
                             <th class="fs-4" scope="col">ACTION</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {{-- @forelse ( $sertifikat as $data ) --}}
+                        @forelse ( $sertifikat as $data )
                             <tr>
-                                 <td> 1 </td>
-                                <td> 1234567 </td>
-                                <td> 12-34-2342</td>
-                                {{-- <td>{{ $loop->iteration }}</td> --}}
-                                {{-- <td>{{$data->pengajuans_id}}</td> --}}
+                                <td>{{$loop->iteration }}</td>
+                                <td>{{$data->no_sertifikat}}</td>
+                                <td>{{$data->pengajuans->nim_mahasiswa}}</td>
+                                <td>{{$data->petugass->nip_petugas}}</td>
                                 <td> <button class="btn btn-outline-dark  btn-sm" type="button" id="button-addon2"><a class="nav-link"  href="/sertifikat/open"> <i class="fa-solid fa-folder-open"></i> </a> </button>
                                     <button class="btn btn-outline-dark  btn-sm" type="button" id="button-addon2"><a class="nav-link"  href="/sertifikat/edit"> <i class="fa-solid fa-pen"></i> </a> </button>
                                     <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#modalHapus $data->id }}" title="Hapus">
@@ -45,13 +45,14 @@
                                     </button>
                                  </td>
                             </tr>
-                     {{-- @empty
-                            tidak ada data
-                     @endforelse --}}
-                      </tbody>
-                </table>
-            </div>
-
+                     @empty
+                <tr>
+                    <td colspan="5" class="text-center">Tidak ada data</td>
+                </tr>
+                @endforelse
+            </tbody>
+        </table>
+    </div>
 @endsection
 
 

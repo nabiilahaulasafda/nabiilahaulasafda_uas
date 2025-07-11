@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Sertifikat;
+use App\Models\Pengajuan;
+use App\Models\Petugas;
 
 class sertifikatController extends Controller
 {
@@ -23,7 +25,9 @@ class sertifikatController extends Controller
     public function create()
     {
         //
-        return view('sertifikat.add');
+        $pengajuan = Pengajuan::all();
+        $petugas = Petugas::all();
+        return view('sertifikat.add',compact('pengajuan','petugas'));
     }
 
     /**
@@ -32,6 +36,17 @@ class sertifikatController extends Controller
     public function store(Request $request)
     {
         //
+        $sertifikat = new Sertifikat;
+        $sertifikat->no_sertifikat = $request->no_sertifikat;
+        $sertifikat->pengajuans_id = $request->pengajuan;
+        $sertifikat->petugass_id = $request->petugas;
+        $sertifikat->file_sertifikat = $request->file_sertifikat->getClientOriginalName();;
+
+        $request->file_sertifikat->move('file_sertifikat',$request->file_sertifikat->getClientOriginalName());
+
+        $sertifikat->save();
+
+        return redirect('/sertifikat');
     }
 
     /**

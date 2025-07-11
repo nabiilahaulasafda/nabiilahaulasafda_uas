@@ -41,7 +41,10 @@ class pengajuanController extends Controller
         $pengajuan->email_mahasiswa = $request->email_mahasiswa;
         $pengajuan->alamat_mahasiswa = $request->alamat_mahasiswa;
         $pengajuan->asal_kampus = $request->asal_kampus;
-        $pengajuan->file_suratpermohonan = $request->file_suratpermohonan;
+        $pengajuan->file_suratpermohonan = $request->file_suratpermohonan->getClientOriginalName();;
+
+        $request->file_suratpermohonan->move('file_suratpermohonan',$request->file_suratpermohonan->getClientOriginalName());
+
         $pengajuan->save();
 
         return redirect('/pengajuan');
@@ -83,6 +86,9 @@ class pengajuanController extends Controller
         $pengajuan->alamat_mahasiswa = $request->alamat_mahasiswa;
         $pengajuan->asal_kampus = $request->asal_kampus;
         $pengajuan->file_suratpermohonan = $request->file_suratpermohonan;
+
+        $request->file_suratpermohonan->move('img',$request->file_suratpermohonan->getClientOriginalName());
+
         $pengajuan->save();
 
         return redirect('/pengajuan');

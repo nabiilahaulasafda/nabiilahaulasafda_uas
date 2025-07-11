@@ -18,4 +18,12 @@ class Pengajuan extends Model
         'asal_kampus',
         'file_suratpermohonan',
     ];
+
+    public function Jadwals(){
+        return $this->belongTo(Jadwal::class);
+    }
+
+    public function Sertifikats(){
+        return $this->belongTo(Sertifikat::class);
+    }
 }

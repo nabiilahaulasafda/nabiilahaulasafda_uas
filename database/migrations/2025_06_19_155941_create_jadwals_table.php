@@ -18,7 +18,11 @@ return new class extends Migration
             $table->string('jadwal',100);
             $table->date('tgl_mulaimagang');
             $table->date('tgl_selesaimagang');
-
+            $table->string('senin',100);
+            $table->string('selasa',100);
+            $table->string('rabu',100);
+            $table->string('kamis',100);
+            $table->string('jumat',100);
             $table->timestamps();
         });
     }
