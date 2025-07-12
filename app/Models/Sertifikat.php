@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Sertifikat extends Model
 {
     use HasFactory;
-    public function pengajuans(){
+    public function Pengajuans(){
         return $this->hasOne(Pengajuan::class, 'id', 'pengajuans_id');
     }
 
-    public function petugass(){
+    public function Petugass(){
         return $this->hasOne(Petugas::class, 'id', 'petugass_id');
     }
 

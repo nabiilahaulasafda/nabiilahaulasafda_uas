@@ -27,7 +27,7 @@ class jadwalController extends Controller
         //
         $pengajuan = Pengajuan::all();
         $petugas = Petugas::all();
-        return view('jadwal.add',compact('pengajuan','jadwal'));
+        return view('jadwal.add',compact('pengajuan','petugas'));
     }
 
     /**
@@ -39,7 +39,6 @@ class jadwalController extends Controller
         $jadwal = new Jadwal;
         $jadwal->petugass_id = $request->petugas;
         $jadwal->pengajuans_id = $request->pengajuan;
-        $jadwal->nama_petugas = $request->nama_petugas;
         $jadwal->jadwal = $request->jadwal;
         $jadwal->tgl_mulaimagang = $request->tgl_mulaimagang;
         $jadwal->tgl_selesaimagang = $request->tgl_selesaimagang;
@@ -56,11 +55,13 @@ class jadwalController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show() //string $id
+    public function show(string $id) //string $id
     {
         //
-        $jadwal = Jadwal::all();
-        return view('jadwal.open',compact('jadwal'));
+        $jadwal = Jadwal::find($id);
+        $pengajuan = Pengajuan::all();
+        $petugas = Petugas::all();
+        return view('jadwal.open',compact('jadwal', 'pengajuan', 'petugas'));
     }
 
     /**
@@ -69,6 +70,8 @@ class jadwalController extends Controller
     public function edit(string $id)
     {
         //
+        $jadwal = Jadwal::find($id);
+        return view('jadwal.edit',compact('jadwal'));
     }
 
     /**

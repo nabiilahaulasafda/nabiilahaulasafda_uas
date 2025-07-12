@@ -30,9 +30,9 @@ Route::get('/', function () {
 //     return view('layouts.template');
 // });
 
-Route::get('/index', function () {
-    return view('jadwal.open');
-});
+// Route::get('/x', function () {
+//     return view('jadwal.open');
+// });
 
 Auth::routes();
 
@@ -54,12 +54,14 @@ Route::delete('/pengajuan/{id}', [pengajuanController::class, 'destroy']);
 Route::get('/jadwal', [jadwalController::class, 'index']);
 Route::get('/jadwal/add', [jadwalController::class, 'create']);
 Route::post('/jadwal', [jadwalController::class, 'store']);
-// Route::get('/jadwal', [jadwalController::class, 'show']);
+Route::get('/jadwal/open/{id}', [jadwalController::class, 'show']);
+Route::get('/jadwal/edit/{id}', [jadwalController::class, 'edit']);
 
 // Data Sertifikat
 Route::get('/sertifikat', [sertifikatController::class, 'index']);
 Route::get('/sertifikat/add', [sertifikatController::class, 'create']);
 Route::post('/sertifikat', [sertifikatController::class, 'store']);
+// Route::get('/sertifikat/edit/{id}', [sertifikatController::class, 'edit']);
 
 // Data Petugas
 Route::get('/petugas', [petugasController::class, 'index']);

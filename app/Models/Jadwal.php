@@ -8,11 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Jadwal extends Model
 {
     use HasFactory;
-    public function pengajuans(){
+    public function Pengajuans(){
         return $this->hasOne(Pengajuan::class, 'id', 'pengajuans_id');
     }
 
-    public function petugass(){
+    public function Petugass(){
         return $this->hasOne(Petugas::class, 'id', 'petugas_id');
     }
+
 }

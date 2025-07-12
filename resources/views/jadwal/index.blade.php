@@ -13,7 +13,7 @@
             <input class="form-control me-2" style="max-width: 300px;" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
             <datalist id="datalistOptions">
             @foreach($jadwal as $data)
-                <option value="{{ $data->nim_mahasiswa }}">
+                <option value="{{ $data->pengajuans->nim_mahasiswa }}">
             @endforeach
             </datalist>
 
@@ -37,9 +37,13 @@
                             <tr>
                                 <td>{{$loop->iteration }}</td>
                                 <td>{{$data->pengajuans->nim_mahasiswa}}</td>
-                                <td>{{$data->tanggal_mulai}}</td>
-                                <td>{{$data->tanggal_selesai}}</td>
-                                <td> <button class="btn btn-outline-dark  btn-sm" type="button" id="button-addon2"><a class="nav-link"  href="/jadwal/open"> <i class="fa-solid fa-folder-open"></i> </a> </button>
+                                <td>{{$data->tgl_mulaimagang}}</td>
+                                <td>{{$data->tgl_selesaimagang}}</td>
+                                <td> <button class="btn btn-outline-dark btn-sm" type="button">
+                                        <a class="nav-link" href="/jadwal/open/{{ $data->id }}">
+                                        <i class="fa-solid fa-folder-open"></i>
+                                        </a>
+                                     </button>
                                      <button class="btn btn-outline-dark  btn-sm" type="button" id="button-addon2"><a class="nav-link"  href="/jadwal/edit"> <i class="fa-solid fa-pen"></i> </a> </button>
                                      <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#modalHapus $data->id }}" title="Hapus">
                                         <i class="fa-solid fa-trash"></i>
