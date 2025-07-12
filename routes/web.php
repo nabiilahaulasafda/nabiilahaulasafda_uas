@@ -48,13 +48,13 @@ Route::post('/pengajuan', [pengajuanController::class, 'store']);
 Route::get('/pengajuan/open/{id}', [pengajuanController::class, 'show']);
 Route::get('/pengajuan/edit/{id}', [pengajuanController::class, 'edit']);
 Route::put('/pengajuan/{id}', [pengajuanController::class, 'update']);
-Route::delete('/pengajuan/delete/{id}', [pengajuanController::class, 'destroy']);
+Route::delete('/pengajuan/{id}', [pengajuanController::class, 'destroy']);
 
 // Data Jadwal
 Route::get('/jadwal', [jadwalController::class, 'index']);
 Route::get('/jadwal/add', [jadwalController::class, 'create']);
 Route::post('/jadwal', [jadwalController::class, 'store']);
-// Route::get('/jadwa', [jadwalController::class, 'show']);
+// Route::get('/jadwal', [jadwalController::class, 'show']);
 
 // Data Sertifikat
 Route::get('/sertifikat', [sertifikatController::class, 'index']);
@@ -68,4 +68,4 @@ Route::post('/petugas', [petugasController::class, 'store']);
 Route::get('/petugas/open/{id}', [petugasController::class, 'show']);
 Route::get('/petugas/edit/{id}', [petugasController::class, 'edit']);
 Route::put('/petugas/{id}', [petugasController::class, 'update']);
-Route::delete('/petugas/delete/{id}', [petugasController::class, 'destroy']);
+Route::delete('/petugas/{id}', [petugasController::class, 'destroy']);

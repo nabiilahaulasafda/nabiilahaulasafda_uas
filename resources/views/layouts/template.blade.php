@@ -14,6 +14,8 @@
 	<link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
 	<link rel="canonical" href="https://demo-basic.adminkit.io/pages-blank.html" />
+    <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 	<title> @yield('title') </title>
 
@@ -206,6 +208,8 @@
             }, 15000);
         });
     </script>
+<!-- Bootstrap JS (dengan Popper.js, sudah include) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

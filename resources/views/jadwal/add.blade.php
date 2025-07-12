@@ -71,8 +71,8 @@
                                     <input type="text" name="jumat" id="disabledTextInput" class="form-control" placeholder="">
                                 </div>
                                 <div>
-                                    <button type="submit" class="btn btn-primary">Tambah</button>
                                     <button class="btn btn-outline-secondary" type="button" id="button-addon2"> <a class="nav-link" href="/jadwal"> Tutup </a> </button>
+                                    <button type="submit" class="btn btn-primary">Tambah</button>
                                 </div>
                             </form>
                         </div>

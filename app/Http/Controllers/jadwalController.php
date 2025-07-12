@@ -27,7 +27,7 @@ class jadwalController extends Controller
         //
         $pengajuan = Pengajuan::all();
         $petugas = Petugas::all();
-        return view('jadwal.add',compact('pengajuan','petugas'));
+        return view('jadwal.add',compact('pengajuan','jadwal'));
     }
 
     /**

@@ -15,4 +15,5 @@ class Sertifikat extends Model
     public function petugass(){
         return $this->hasOne(Petugas::class, 'id', 'petugass_id');
     }
+
 }

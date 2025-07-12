@@ -30,6 +30,7 @@
                             <th class="fs-4" scope="col">TANGGAL SELESAI</th>
                             <th class="fs-4" scope="col">ACTION</th>
                         </tr>
+
                     </thead>
                     <tbody>
                         @forelse ( $jadwal as $data )

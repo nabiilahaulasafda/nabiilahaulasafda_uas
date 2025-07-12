@@ -8,5 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Petugas extends Model
 {
     use HasFactory;
-    protected $table = 'petugass';
+    protected $fillable = [
+        'nip_petugas',
+        'nama_petugas',
+        'jabatan_petugas',
+    ];
+
+    public function Sertifikats(){
+        return $this->belongTo(Sertifikat::class);
+    }
 }
