@@ -63,7 +63,9 @@ Route::delete('/jadwal/{id}', [jadwalController::class, 'destroy']);
 Route::get('/sertifikat', [sertifikatController::class, 'index']);
 Route::get('/sertifikat/add', [sertifikatController::class, 'create']);
 Route::post('/sertifikat', [sertifikatController::class, 'store']);
-// Route::get('/sertifikat/edit/{id}', [sertifikatController::class, 'edit']);
+Route::get('/sertifikat/edit/{id}', [sertifikatController::class, 'edit']);
+Route::put('/sertifikat/{id}', [sertifikatController::class, 'update']);
+Route::delete('/sertifikat/{id}', [sertifikatController::class, 'destroy']);
 
 // Data Petugas
 Route::get('/petugas', [petugasController::class, 'index']);

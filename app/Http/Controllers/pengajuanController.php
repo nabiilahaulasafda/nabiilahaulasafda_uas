@@ -32,6 +32,10 @@ class pengajuanController extends Controller
     public function store(Request $request)
     {
         // proses tambah
+        $request->validate([
+        'file_suratpermohonan' => 'required|file|mimes:pdf,jpg,jpeg,png|max:2048', // sesuaikan jenis file
+    ]);
+
         $pengajuan = new Pengajuan;
         $pengajuan->nim_mahasiswa = $request->nim_mahasiswa;
         $pengajuan->nama_mahasiswa = $request->nama_mahasiswa;
@@ -87,7 +91,13 @@ class pengajuanController extends Controller
         $pengajuan->asal_kampus = $request->asal_kampus;
         $pengajuan->file_suratpermohonan = $request->file_suratpermohonan;
 
-        $request->file_suratpermohonan->move('img',$request->file_suratpermohonan->getClientOriginalName());
+        if ($request->hasFile('file_suratpermohonan')) {
+        $file = $request->file('file_suratpermohonan');
+        $filename = time().'_'.$file->getClientOriginalName();
+        $file->move(public_path('file_suratpermohonan'), $filename);
+        $pengajuan->file_suratpermohonan = $filename;
+    }
+
 
         $pengajuan->save();
 

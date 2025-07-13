@@ -63,6 +63,10 @@ class sertifikatController extends Controller
     public function edit(string $id)
     {
         //
+        $sertifikat = Sertifikat::find($id);
+        $pengajuans = Pengajuan::all();
+        $petugass = Petugas::all();
+        return view('sertifikat.edit',compact('sertifikat', 'pengajuans', 'petugass'));
     }
 
     /**
@@ -71,6 +75,29 @@ class sertifikatController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $request->validate([
+        'no_sertifikat' => 'required',
+        'pengajuans_id' => 'required',
+        'petugass_id' => 'required',
+    ]);
+
+    $sertifikat = Sertifikat::findOrFail($id);
+
+    $sertifikat->no_sertifikat = $request->no_sertifikat;
+    $sertifikat->pengajuans_id = $request->pengajuans_id;
+    $sertifikat->petugass_id = $request->petugass_id;
+
+    // Cek jika ada file baru diupload
+    if ($request->hasFile('file_sertifikat')) {
+        $file = $request->file('file_sertifikat');
+        $filename = time().'_'.$file->getClientOriginalName();
+        $file->move(public_path('file_sertifikat'), $filename);
+        $sertifikat->file_sertifikat = $filename;
+    }
+
+    $sertifikat->save();
+
+    return redirect('/sertifikat')->with('success', 'Data sertifikat berhasil diupdate.');
     }
 
     /**
@@ -79,5 +106,9 @@ class sertifikatController extends Controller
     public function destroy(string $id)
     {
         //
+        $sertifikat = Sertifikat::find($id);
+        $sertifikat->delete();
+
+        return redirect('/sertifikat');
     }
 }

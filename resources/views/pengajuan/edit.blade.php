@@ -51,9 +51,30 @@
                         <input type="text" value="{{ $pengajuan->asal_kampus }}" name="asal_kampus" class="form-control" id="exampleInputEmail1">
                     </div>
                     <div class="mb-3">
+                        <label class="form-label">File Surat Permohonan</label>
+
+                        <div class="input-group">
+                            {{-- Tampilkan nama file lama dalam input text readonly --}}
+                            <input type="text" class="form-control" value="{{ $pengajuan->file_suratpermohonan }}" readonly>
+
+                            {{-- Tombol Choose File untuk upload ulang --}}
+                            <input type="file" name="file_suratpermohonan" class="form-control">
+                        </div>
+
+                        {{-- Tampilkan file link di bawahnya (jika ingin akses lama) --}}
+                        @if ($pengajuan->file_suratpermohonan)
+                            <small class="text-muted">
+                                File saat ini: <a href="{{ asset('file_suratpermohonan/' . $pengajuan->file_suratpermohonan) }}" target="_blank">
+                                    {{ $pengajuan->file_suratpermohonan }}
+                                </a>
+                            </small>
+                        @endif
+                    </div>
+
+                    {{-- <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">File Surat Permohonan</label>
                         <input type="file" value="{{ $pengajuan->file_suratpermohonan }}" accept="image/*" name="file_suratpermohonan" class="form-control" id="exampleInputEmail1">
-                    </div>
+                    </div> --}}
                     <div class="text-end">
                         <button class="btn btn-outline-secondary" type="button" id="button-addon2"> <a class="nav-link" href="/pengajuan">  Tutup  </a> </button>
                         <button type="submit" class="btn btn-outline-secondary">Edit</button>
