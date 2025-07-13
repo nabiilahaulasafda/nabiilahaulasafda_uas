@@ -37,7 +37,7 @@
                                 <td>{{$loop->iteration }}</td>
                                 <td>{{$data->no_sertifikat}}</td>
                                 <td>{{$data->pengajuans->nim_mahasiswa}}</td>
-                                {{-- <td>{{$data->petugass->nip_petugas}}</td> --}}
+                                <td>{{$data->petugass->nip_petugas}}</td>
                                 <td> <button class="btn btn-outline-dark  btn-sm" type="button" id="button-addon2"><a class="nav-link"  href="/sertifikat/open"> <i class="fa-solid fa-folder-open"></i> </a> </button>
                                     <button class="btn btn-outline-dark  btn-sm" type="button" id="button-addon2"><a class="nav-link"  href="/sertifikat/edit"> <i class="fa-solid fa-pen"></i> </a> </button>
                                     <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#modalHapus $data->id }}" title="Hapus">

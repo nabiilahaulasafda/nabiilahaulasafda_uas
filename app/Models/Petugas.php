@@ -17,10 +17,10 @@ class Petugas extends Model
     ];
 
     public function Sertifikats(){
-        return $this->hasOne(Sertifikat::class);
+        return $this->hasMany(Sertifikat::class);
     }
 
     public function Jadwals(){
-        return $this->hasOne(Jadwal::class);
+        return $this->hasMany(Jadwal::class);
     }
 }

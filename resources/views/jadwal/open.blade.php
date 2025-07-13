@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,13 +22,16 @@
                             <div class="row g-3">
                                 <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Nip Petugas</label>
-                                        <input type="text" class="form-control" value="{{ $jadwal->petugass->nip_petugas ?? '-' }}" readonly>
+                                        <input type="text" class="form-control" value="{{ $jadwal->petugass->nip_petugas}}" placeholder="{{ $jadwal->petugass->nip_petugas }}" readonly>
 
                                     </div>
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Nim Pengajuan</label>
                                         @foreach ($pengajuan as $nim)
                                             <input type="text" value="{{ $nim->nim_pengajuan }}" class="form-control" placeholder="{{ $nim->nim_pengajuan }}" readonly>
+                                        @endforeach
+                                        @foreach ($petugas as $item1)
+                                            <option value="{{ $item1->id }}">{{ $item1->nip_petugas }}</option>
                                         @endforeach
                                     </div>
                                     <div class="mb-3">
@@ -84,4 +87,4 @@
 
 
 
-
+ --}}

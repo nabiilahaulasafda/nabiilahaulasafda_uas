@@ -22,10 +22,10 @@ class Pengajuan extends Model
     ];
 
     public function Jadwals(){
-        return $this->belongTo(Jadwal::class);
+        return $this->hasMany(Jadwal::class);
     }
 
     public function Sertifikats(){
-        return $this->belongTo(Sertifikat::class);
+        return $this->hasOne(Sertifikat::class);
     }
 }

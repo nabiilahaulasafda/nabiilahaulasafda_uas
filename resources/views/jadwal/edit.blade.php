@@ -3,42 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href={{asset('css/bootstrap.min.css')}}>
-    <title>EDIT <span class="oi oi[data-glyph=account-login]"></span></title>
+    <link rel="stylesheet" href={{ asset('css/bootstrap.min.css') }}>
+    <title>Edit Jadwal</title>
 </head>
 <body>
-    <div class="container center col-6 ">
-        <div class="card mt-4">
-            <div class="card-header text-center">
-                  <h2> EDIT DATA PETUGAS </h2>
-            </div>
-            <div class="card-body">
-                <form method="POST" action="/jadwal/{{ $jadwal->id }}" enctype="multipart/form-data">
-                        @csrf
-                        @method('PUT')
-                <div class="row g-3 ">
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Nip Petugas</label>
-                        <input type="text" value="{{ $petugas->nip_petugas }}" name="nip_petugas" class="form-control" id="exampleInputEmail1">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Nama Petugas</label>
-                        <input type="text" value="{{ $petugas->nama_petugas }}" name="nama_petugas" class="form-control" id="exampleInputEmail1">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Jabatan Petugas</label>
-                        <input type="text" type="text" value="{{ $petugas->jabatan_petugas }}" name="jabatan_petugas" class="form-control" id="exampleInputEmail1">
-                    </div>
-                    <div class="text-end">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon2"> <a class="nav-link" href="/petugas">  Tutup  </a> </button>
-                        <button type="submit" class="btn btn-outline-secondary">Edit</button>
-                    </div>
-                     </form>
+<div class="container col-6 mt-5">
+    <div class="card">
+        <div class="card-header text-center">
+            <h2>EDIT DATA JADWAL</h2>
+        </div>
+        <div class="card-body">
+            <form method="POST" action="/jadwal/{{ $jadwal->id }}">
+                @csrf
+                @method('PUT')
+
+                {{-- Pilih Mahasiswa (Pengajuan) --}}
+                <div class="mb-3">
+                    <label for="pengajuans_id" class="form-label">NIM Mahasiswa</label>
+                    <select name="pengajuans_id" class="form-control">
+                        <option value="">-- Pilih Mahasiswa --</option>
+                        @foreach($pengajuans as $pengajuan)
+                            <option value="{{ $pengajuan->id }}"
+                                {{ $jadwal->pengajuans_id == $pengajuan->id ? 'selected' : '' }}>
+                                {{ $pengajuan->nim_mahasiswa }} - {{ $pengajuan->nama_mahasiswa }}
+                            </option>
+                        @endforeach
+                    </select>
                 </div>
-            </div>
+
+                {{-- Pilih Petugas --}}
+                <div class="mb-3">
+                    <label for="petugass_id" class="form-label">Petugas</label>
+                    <select name="petugass_id" class="form-control">
+                        <option value="">-- Pilih Petugas --</option>
+                        @foreach($petugass as $petugas)
+                            <option value="{{ $petugas->id }}"
+                                {{ $jadwal->petugass_id == $petugas->id ? 'selected' : '' }}>
+                                {{ $petugas->nip_petugas }} - {{ $petugas->nama_petugas }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+
+                {{-- Tanggal Mulai --}}
+<div class="mb-3">
+    <label for="tgl_mulaimagang" class="form-label">Tanggal Mulai Magang</label>
+    <input type="date" name="tgl_mulaimagang" class="form-control" value="{{ $jadwal->tgl_mulaimagang }}">
+</div>
+
+{{-- Tanggal Selesai --}}
+<div class="mb-3">
+    <label for="tgl_selesaimagang" class="form-label">Tanggal Selesai Magang</label>
+    <input type="date" name="tgl_selesaimagang" class="form-control" value="{{ $jadwal->tgl_selesaimagang }}">
+</div>
+
+{{-- Input Jadwal (Keterangan Umum) --}}
+<div class="mb-3">
+    <label for="jadwal" class="form-label">Keterangan Jadwal</label>
+    <input type="text" name="jadwal" class="form-control" value="{{ $jadwal->jadwal }}">
+</div>
+
+{{-- Hari-hari --}}
+@foreach(['senin','selasa','rabu','kamis','jumat'] as $hari)
+    <div class="mb-3">
+        <label for="{{ $hari }}" class="form-label">{{ ucfirst($hari) }}</label>
+        <input type="text" name="{{ $hari }}" class="form-control" value="{{ $jadwal->$hari }}">
+    </div>
+@endforeach
+
+                <div class="text-end">
+                    <a href="/jadwal" class="btn btn-outline-secondary">Tutup</a>
+                    <button type="submit" class="btn btn-outline-secondary">Edit</button>
+                </div>
+            </form>
         </div>
     </div>
-    </div>
+</div>
 </body>
 </html>

@@ -44,10 +44,27 @@
                                         <i class="fa-solid fa-folder-open"></i>
                                         </a>
                                      </button>
-                                     <button class="btn btn-outline-dark  btn-sm" type="button" id="button-addon2"><a class="nav-link"  href="/jadwal/edit"> <i class="fa-solid fa-pen"></i> </a> </button>
-                                     <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#modalHapus $data->id }}" title="Hapus">
-                                        <i class="fa-solid fa-trash"></i>
-                                     </button>
+                                     <button class="btn btn-outline-dark  btn-sm" type="button" id="button-addon2"><a class="nav-link"  href="/jadwal/edit/{{ $data->id }}"> <i class="fa-solid fa-pen"></i> </a> </button>
+                                     <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#modalHapus{{ $data->id }}" title="Hapus">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                    <div class="modal fade" id="modalHapus{{ $data->id }}" tabindex="-1" style="display: none;" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-body m-3">
+													<p class="mb-0">Yakin data a.n {{ $data->pengajuans->nim_mahasiswa }} ingin dihapus ?</p>
+												</div>
+												<div class="modal-footer">
+													<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+													<form action="jadwal/{{$data->id}}" method="post">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger">Delete</button>
+                                                </form>
+												</div>
+											</div>
+										</div>
+									</div>
                                 </td>
                             </tr>
                       @empty

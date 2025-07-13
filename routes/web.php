@@ -56,6 +56,8 @@ Route::get('/jadwal/add', [jadwalController::class, 'create']);
 Route::post('/jadwal', [jadwalController::class, 'store']);
 Route::get('/jadwal/open/{id}', [jadwalController::class, 'show']);
 Route::get('/jadwal/edit/{id}', [jadwalController::class, 'edit']);
+Route::put('/jadwal/{id}', [jadwalController::class, 'update']);
+Route::delete('/jadwal/{id}', [jadwalController::class, 'destroy']);
 
 // Data Sertifikat
 Route::get('/sertifikat', [sertifikatController::class, 'index']);
