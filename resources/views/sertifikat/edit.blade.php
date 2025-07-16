@@ -1,15 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href={{ asset('css/bootstrap.min.css') }}>
-    <title>Edit Jadwal</title>
-</head>
-<body>
-<div class="container col-6 mt-5">
-    <div class="card">
-        <div class="card-header text-center">
+@extends('layouts.template')
+@section('title')
+    Halaman Data Jadwal
+@endsection
+
+@section('headline')
+    DAFTAR JADWAL
+@endsection
+
+@section('content')
+    <div class="card ">
+        <div class="card-header text-center bg-light">
             <h2>EDIT DATA JADWAL</h2>
         </div>
         <div class="card-body">
@@ -79,6 +79,4 @@
             </form>
         </div>
     </div>
-</div>
-</body>
-</html>
+@endsection

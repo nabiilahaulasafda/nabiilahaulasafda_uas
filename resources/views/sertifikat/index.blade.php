@@ -8,6 +8,8 @@
 @endsection
 
 @section('content')
+<div class="card">
+        <div class="card-header">
         <div class="card-body">
             <div class="d-flex justify-content-between align-items-center mb-3">
             <input class="form-control me-2" style="max-width: 300px;" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">

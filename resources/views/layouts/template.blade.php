@@ -105,12 +105,27 @@
               <i class="fa-solid fa-user"></i><span class="align-middle">Petugas</span>
             </a>
 					</li>
-
-					{{-- <li class="sidebar-item">
-						<a class="sidebar-link" href="pages-sign-up.html">
-              <i class="align-middle" data-feather="log-in"></i>  <span class="align-middle">log out/sign up</span>
-            </a>
-					</li> --}}
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+					<li class="sidebar-item">
+						<a class="sidebar-link" href="{{ route('logout') }}"
+                            dd commentMore actions
+                                    onclick="event.preventDefault();
+                                          document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                        <i class="fa-solid fa-user"></i><span class="align-start"></span>
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                        </form>
+					</li>
 				</ul>
 
 			</div>
@@ -129,43 +144,28 @@
                 <i class="align-middle" data-feather="settings"></i>
               </a>
 
-							<a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
+							<a class="nav-link " href="#" data-bs-toggle="dropdown">
+                <img src="img/avatars/avatar-3.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Admin</span>
               </a>
-							<div class="dropdown-menu dropdown-menu-end">
-								{{-- <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="index.html"><i class="align-middle me-1" data-feather="settings"></i> Settings </a>
-								<div class="dropdown-divider"></div> --}}
-								<a class="dropdown-item" href="{{ route('logout') }}"Add commentMore actions
-                                    onclick="event.preventDefault();
-                                          document.getElementById('logout-form').submit();">
-                                    {{ __('logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-							</div>
 						</li>
 					</ul>
 				</div>
 			</nav>
 
 			<main class="content">
-				<div class="container-fluid p-0">
-                    {{-- <div class="content-bg"> --}}
+				{{-- <div class="container-fluid p-0">
+                    <div class="content-bg">
                         <div class="container center col-12">
                         <div class="container-fluid">
                         <div class="card" style="border: none">
-                            <div class="card-header gradient-nav">
+                            <div class="card-header gradient-nav"> --}}
                     @yield('content')
 
+				{{-- </div>
 				</div>
 				</div>
 				</div>
-				</div>
-				</div>
+				</div> --}}
 			</main>
 
 			<footer class="footer">

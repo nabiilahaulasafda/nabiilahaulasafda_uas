@@ -8,6 +8,9 @@
 @endsection
 
 @section('content')
+<div class="card">
+        <div class="card-header">
+
         <div class="card-body">
             <div class="d-flex justify-content-between align-items-center mb-3">
             <input class="form-control me-2" style="max-width: 300px;" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
@@ -54,7 +57,7 @@
                                                     </div>
                                                     <div class="modal-body">
                                                         <table class="table">
-                                                            <tr><td>Nama Mahasiswa</td><td>: {{optional ($data->pengajuans)->nim_mahasiswa}}</td></tr>
+                                                            <tr><td>Nim Mahasiswa</td><td>: {{optional ($data->pengajuans)->nim_mahasiswa}}</td></tr>
                                                             <tr><td>Nama Mahasiswa</td><td>: {{optional ($data->pengajuans)->nama_mahasiswa}}</td></tr>
                                                             <tr><td>Tanggal Mulai Magang</td><td>: {{ $data->tgl_mulaimagang }}</td></tr>
                                                             <tr><td>Tanggal Selesai Magang</td><td>: {{ $data->tgl_selesaimagang }}</td></tr>

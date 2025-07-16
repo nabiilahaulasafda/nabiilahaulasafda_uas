@@ -1,15 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href={{ asset('css/bootstrap.min.css') }}>
-    <title>Edit Jadwal</title>
-</head>
-<body>
-<div class="container col-6 mt-5">
-    <div class="card">
-        <div class="card-header text-center">
+@extends('layouts.template')
+@section('title')
+    Halaman Data Jadwal
+@endsection
+
+@section('headline')
+    DAFTAR JADWAL
+@endsection
+
+@section('content')
+    <div class="card ">
+        <div class="card-header text-center bg-light">
             <h2>EDIT DATA JADWAL</h2>
         </div>
         <div class="card-body">
@@ -19,7 +19,7 @@
 
                 {{-- Pilih Mahasiswa (Pengajuan) --}}
                 <div class="mb-3">
-                    <label for="pengajuans_id" class="form-label">NIM Mahasiswa</label>
+                    <label for="pengajuans_id" class="form-label">Mahasiswa</label>
                     <select name="pengajuans_id" class="form-control">
                         <option value="">-- Pilih Mahasiswa --</option>
                         @foreach($pengajuans as $pengajuan)
@@ -46,30 +46,30 @@
                 </div>
 
                 {{-- Tanggal Mulai --}}
-<div class="mb-3">
-    <label for="tgl_mulaimagang" class="form-label">Tanggal Mulai Magang</label>
-    <input type="date" name="tgl_mulaimagang" class="form-control" value="{{ $jadwal->tgl_mulaimagang }}">
-</div>
+                <div class="mb-3">
+                    <label for="tgl_mulaimagang" class="form-label">Tanggal Mulai Magang</label>
+                    <input type="date" name="tgl_mulaimagang" class="form-control" value="{{ $jadwal->tgl_mulaimagang }}">
+                </div>
 
-{{-- Tanggal Selesai --}}
-<div class="mb-3">
-    <label for="tgl_selesaimagang" class="form-label">Tanggal Selesai Magang</label>
-    <input type="date" name="tgl_selesaimagang" class="form-control" value="{{ $jadwal->tgl_selesaimagang }}">
-</div>
+                {{-- Tanggal Selesai --}}
+                <div class="mb-3">
+                    <label for="tgl_selesaimagang" class="form-label">Tanggal Selesai Magang</label>
+                    <input type="date" name="tgl_selesaimagang" class="form-control" value="{{ $jadwal->tgl_selesaimagang }}">
+                </div>
 
-{{-- Input Jadwal (Keterangan Umum) --}}
-<div class="mb-3">
-    <label for="jadwal" class="form-label">Keterangan Jadwal</label>
-    <input type="text" name="jadwal" class="form-control" value="{{ $jadwal->jadwal }}">
-</div>
+                {{-- Input Jadwal (Keterangan Umum) --}}
+                <div class="mb-3">
+                    <label for="jadwal" class="form-label">Keterangan Jadwal</label>
+                    <input type="text" name="jadwal" class="form-control" value="{{ $jadwal->jadwal }}">
+                </div>
 
-{{-- Hari-hari --}}
-@foreach(['senin','selasa','rabu','kamis','jumat'] as $hari)
-    <div class="mb-3">
-        <label for="{{ $hari }}" class="form-label">{{ ucfirst($hari) }}</label>
-        <input type="text" name="{{ $hari }}" class="form-control" value="{{ $jadwal->$hari }}">
-    </div>
-@endforeach
+                {{-- Hari-hari --}}
+                @foreach(['senin','selasa','rabu','kamis','jumat'] as $hari)
+                    <div class="mb-3">
+                        <label for="{{ $hari }}" class="form-label">{{ ucfirst($hari) }}</label>
+                        <input type="text" name="{{ $hari }}" class="form-control" value="{{ $jadwal->$hari }}">
+                    </div>
+                @endforeach
 
                 <div class="text-end">
                     <a href="/jadwal" class="btn btn-outline-secondary">Tutup</a>
@@ -78,6 +78,5 @@
             </form>
         </div>
     </div>
-</div>
-</body>
-</html>
+{{-- </div> --}}
+@endsection
