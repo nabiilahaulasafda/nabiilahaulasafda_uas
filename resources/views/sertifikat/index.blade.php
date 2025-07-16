@@ -38,7 +38,35 @@
                                 <td>{{$data->no_sertifikat}}</td>
                                 <td>{{optional ($data->pengajuans)->nim_mahasiswa}}</td>
                                 <td>{{optional ($data->petugass)->nip_petugas}}</td>
-                                <td> <button class="btn btn-outline-dark  btn-sm" type="button" id="button-addon2"><a class="nav-link"  href="/sertifikat/open"> <i class="fa-solid fa-folder-open"></i> </a> </button>
+                                <td>
+                                    <!-- Button Detail -->
+                    <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#modalDetail{{ $data->id }}" title="Detail">
+                        <i class="fa-solid fa-folder-open"></i>
+                    </button>
+                    <!-- Modal Detail -->
+                    <div class="modal fade" id="modalDetail{{ $data->id }}" tabindex="-1" style="display: none;" aria-hidden="true">
+										<div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel{{ $data->id }}">Detail Data Petugas</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <table class="table">
+                                                            <tr><td>No Sertifikat</td><td>: {{ $data->no_sertifikat }}</td></tr>
+                                                            <tr><td>Nip Petugas</td><td>: {{optional ($data->petugass)->nip_petugas}}</td></tr>
+                                                            <tr><td>Nama Petugas</td><td>: {{optional ($data->petugass)->nama_petugas}}</td></tr>
+                                                            <tr><td>Nim Mahasiswa</td><td>: {{optional ($data->pengajuans)->nim_mahasiswa}}</td></tr>
+                                                            <tr><td>Nama Mahasiswa</td><td>: {{optional ($data->pengajuans)->nama_mahasiswa}}</td></tr>
+                                                            <tr><td>File Sertifikat</td><td>: {{ $data->file_sertifikat }}</td></tr>
+                                                        </table>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+									</div>
                                     <button class="btn btn-outline-dark  btn-sm" type="button" id="button-addon2"><a class="nav-link"  href="/sertifikat/edit/{{ $data->id }}"> <i class="fa-solid fa-pen"></i> </a> </button>
                                     <button type="button" class="btn btn-outline-dark btn-sm" data-bs-toggle="modal" data-bs-target="#modalHapus{{ $data->id }}" title="Hapus">
                         <i class="fa-solid fa-trash"></i>
@@ -47,7 +75,7 @@
 										<div class="modal-dialog" role="document">
 											<div class="modal-content">
 												<div class="modal-body m-3">
-													<p class="mb-0">Yakin data a.n {{ $data->pengajuans->nim_mahasiswa }} ingin dihapus ?</p>
+													<p class="mb-0">Yakin data a.n <strong>{{optional ($data->pengajuans)->nim_mahasiswa}}</strong> ingin dihapus ?</p>
 												</div>
 												<div class="modal-footer">
 													<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

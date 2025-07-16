@@ -41,11 +41,31 @@
                     <td>{{$data->nama_petugas}}</td>
                     <td>{{$data->jabatan_petugas}}</td>
                     <td>
-                    <button class="btn btn-outline-dark btn-sm" type="button">
-                        <a class="nav-link" href="/petugas/open/{{ $data->id }}">
+                    <!-- Button Detail -->
+                    <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#modalDetail{{ $data->id }}" title="Detail">
                         <i class="fa-solid fa-folder-open"></i>
-                        </a>
                     </button>
+                    <!-- Modal Detail -->
+                    <div class="modal fade" id="modalDetail{{ $data->id }}" tabindex="-1" style="display: none;" aria-hidden="true">
+										<div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel{{ $data->id }}">Detail Data Petugas</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <table class="table">
+                                                            <tr><td>Nip Petugas</td><td>: {{ $data->nip_petugas }}</td></tr>
+                                                            <tr><td>Nama Petugas</td><td>: {{ $data->nama_petugas }}</td></tr>
+                                                            <tr><td>Jabatan Petugas</td><td>: {{ $data->jabatan_petugas }}</td></tr>
+                                                        </table>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+									</div>
                     <button class="btn btn-outline-dark btn-sm" type="button">
                         <a class="nav-link" href="/petugas/edit/{{ $data->id }}">
                         <i class="fa-solid fa-pen"></i>
@@ -59,7 +79,7 @@
 										<div class="modal-dialog" role="document">
 											<div class="modal-content">
 												<div class="modal-body m-3">
-													<p class="mb-0">Yakin data a.n {{ $data->nama_petugas }} ingin dihapus ?</p>
+													<p class="mb-0">Yakin data a.n <strong> {{ $data->nama_petugas }} </strong>ingin dihapus ?</p>
 												</div>
 												<div class="modal-footer">
 													<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

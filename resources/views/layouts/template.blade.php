@@ -100,7 +100,6 @@
               <i class="align-middle" data-feather="grid"></i> <span class="align-middle">Sertifikat</span>
             </a>
 					</li>
-
 					<li class="sidebar-item {{ request()->is('petugas') ? 'active' : '' }}">
 						<a class="sidebar-link" href="/petugas">
               <i class="fa-solid fa-user"></i><span class="align-middle">Petugas</span>
