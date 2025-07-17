@@ -26,39 +26,13 @@
 
 
     <style>
-    .content-bg {
-        background-image: url("{{ asset('img/y.jpg') }}");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        min-height: calc(100vh - 120px); /* tinggi konten tanpa header + footer */
-        padding: 2rem;
-    }
-
-    .card-transparan {
-        background-color: rgba(0, 0, 0, 0.6);
-        color: white;
-        border: 1px solid white;
-        border-radius: 10px;
-        padding: 2rem;
-        margin-bottom: 1.5rem;
-    }
-
     main.content {
-        margin: 0;
-        padding: 0;
-        background-image: url("{{ asset('img/y.jpg') }}");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        min-height: calc(100vh - 120px); /* tinggi konten tanpa header + footer */
-        padding: 2rem;
-    }
+    background-color: #737e864e !important;
+    min-height: calc(100vh - 120px);
+}
 
-    h2.dashboard-title {
-        font-size: 2.5rem;
-        font-weight: bold;
-        margin-bottom: 2rem;
+    .card-body {
+        padding: 2rem;
     }
 </style>
 </head>
@@ -77,8 +51,8 @@
 						Pages
 					</li>
 
-					<li class="sidebar-item {{ request()->is('beranda') ? 'active' : '' }}">
-						<a class="sidebar-link" href="/beranda">
+					<li class="sidebar-item {{ request()->is('home') ? 'active' : '' }}">
+						<a class="sidebar-link" href="/home">
               <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Beranda</span>
             </a>
 					</li>
@@ -145,37 +119,27 @@
               </a>
 
 							<a class="nav-link " href="#" data-bs-toggle="dropdown">
-                <img src="img/avatars/avatar-3.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Admin</span>
+                <img src="{{ asset('img/avatars/avatar-3.jpg') }}" class="avatar img-fluid rounded me-1" alt="Avatar"> <span class="text-dark">Admin</span>
               </a>
 						</li>
 					</ul>
 				</div>
 			</nav>
 
-			<main class="content">
-				{{-- <div class="container-fluid p-0">
-                    <div class="content-bg">
-                        <div class="container center col-12">
-                        <div class="container-fluid">
-                        <div class="card" style="border: none">
-                            <div class="card-header gradient-nav"> --}}
-                    @yield('content')
+			<main class="content bg-white">
+    <div class="container py-4">
+                @yield('content')
+    </div>
+</main>
 
-				{{-- </div>
-				</div>
-				</div>
-				</div>
-				</div> --}}
-			</main>
-
-			<footer class="footer">
+			<footer class="footer shadow-sm border-top bg-white">
 				<div class="container-fluid">
 					<div class="row text-muted">
 						<div class="col-6 text-start">
 						</div>
 						<div class="col-6 text-end">
                             <p class="mb-0">
-								<a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>AdminKit</strong></a> - <a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>Bootstrap Admin Template</strong></a>								&copy;
+								<a class="text-muted" ><strong>B I I L A</strong></a> - <a class="text-muted" ><strong>made by nabiilahaulasafda</strong></a>								&copy;
 							</p>
 						</div>
 					</div>
@@ -209,7 +173,7 @@
     </script>
 <!-- Bootstrap JS (dengan Popper.js, sudah include) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+@stack('scripts')
 </body>
 
 </html>

@@ -1,10 +1,10 @@
 @extends('layouts.template')
 @section('title')
-    Halaman Data Jadwal
+    Halaman Data Petugas
 @endsection
 
 @section('headline')
-    DAFTAR JADWAL
+    DAFTAR PETUGAS
 @endsection
 
 @section('content')

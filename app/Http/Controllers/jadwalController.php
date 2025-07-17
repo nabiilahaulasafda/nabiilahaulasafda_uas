@@ -58,10 +58,6 @@ class jadwalController extends Controller
     public function show(string $id) //string $id
     {
         //
-        $jadwal = Jadwal::find($id);
-        $pengajuan = Pengajuan::all();
-        $petugas = Petugas::all();
-        return view('jadwal.open',compact('jadwal', 'pengajuan', 'petugas'));
     }
 
     /**

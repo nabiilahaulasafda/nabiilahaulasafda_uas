@@ -1,36 +1,35 @@
 @extends('layouts.template')
 @section('title')
-    Halaman Dashboard
+    Halaman Beranda
 @endsection
 
 @section('headline')
-    Dashboard
+    BERANDA
 @endsection
 
 @section('content')
-
- <div class="content-bg">
-     <div class="card">
-        <div class="card-header">
-          <h3 class="card-title">Title</h3>
-
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-              <i class="fas fa-minus"></i>
-            </button>
-            <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-              <i class="fas fa-times"></i>
-            </button>
-          </div>
-        </div>
+<div class="card">
+        <div class="card-header text-center">
         <div class="card-body">
-          Selamat Datang Admin, semoga harimu menyenangkan
+                <h1>HALO ADMIN!</h1>
+                <p><strong>Tanggal:</strong> <span id="date"></span></p>
+
+
+            <!-- Cuaca & Tanggal langsung di background -->
+            <div class="weather-box">
+
+            </div>
+
+            <div class="mx-5">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            </div>
         </div>
-        <!-- /.card-body -->
-        <div class="card-footer">
-          Footer
-        </div>
-        </div>
+         </div>
+    </div>
+
+<script src={{ asset('js/app.js') }}></script>
+<script src={{ asset('js/all.js') }}></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 @endsection
 
 

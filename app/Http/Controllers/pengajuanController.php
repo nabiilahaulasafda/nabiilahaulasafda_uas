@@ -59,9 +59,7 @@ class pengajuanController extends Controller
      */
     public function show(string $id)
     {
-        // menampilkan data detail
-        $pengajuan = Pengajuan::find($id); // cari data berdasarkan id
-        return view('pengajuan.open', compact('pengajuan'));
+        //
     }
 
     /**

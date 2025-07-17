@@ -8,24 +8,26 @@
 @endsection
 
 @section('content')
-<div class="card">
-        <div class="card-header">
-    <div class="card-body">
-
-        <div class="d-flex justify-content-between align-items-center mb-3">
-            <input class="form-control me-2" style="max-width: 300px;" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+<div class="card shadow-sm rounded-2 border-3">
+    {{-- HEADER CARD (Search dan Add) --}}
+    <div class="card-header bg-white border-0 py-2 px-3">
+        <div class="d-flex justify-content-between align-items-center">
+            <input class="form-control me-2" style="max-width: 300px;" list="datalistOptions" id="searchInput" placeholder="Cari NIM Mahasiswa...">
             <datalist id="datalistOptions">
-            @foreach($pengajuan as $data)
-                <option value="{{ $data->nim_mahasiswa }}">
-            @endforeach
+                @foreach($pengajuan as $data)
+                    <option value="{{ $data->nim_mahasiswa }}">
+                @endforeach
             </datalist>
 
-            <a href="pengajuan/add" class="btn btn-primary btn-md d-flex align-items-center">
+           <a href="pengajuan/add" class="btn btn-primary btn-md d-flex align-items-center">
             <i class="fa fa-user-plus me-1"></i> Add
-            </a>
+        </a>
         </div>
+    </div>
 
-        <table class="table table-striped">
+    {{-- BODY CARD (TABEL) --}}
+    <div class="card-body pt-1 px-3 pb-3">
+        <table class="table table-striped" id="tabelPengajuan">
             <thead>
                 <tr>
                     <th class="fs-4" scope="col">NO</th>
@@ -108,34 +110,34 @@
                     <td colspan="5" class="text-center">Tidak ada data</td>
                 </tr>
                 @endforelse
+                @stack('scripts')
             </tbody>
         </table>
     </div>
+</div>
+@push('scripts')
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const input = document.getElementById('searchInput');
+    const table = document.getElementById('tabelPengajuan');
+    const rows = table.querySelectorAll('tbody tr');
 
-            {{-- @foreach ($pengajuan as $data)
-            <!-- Modal Konfirmasi Hapus -->
-            <div class="modal fade" id="modalHapus{{ $data->id }}" tabindex="-1" aria-labelledby="modalLabel{{ $data->id }}" aria-hidden="true">
-                <div class="modal-dialog">
-                <div class="modal-content border-danger">
-                    <div class="modal-header bg-danger text-white">
-                    <h5 class="modal-title" id="modalLabel{{ $data->id }}">Konfirmasi Hapus</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                    Yakin ingin menghapus data <strong>{{ $data->nama_mahasiswa }}</strong> (NIM: {{ $data->nim_mahasiswa }})?
-                    </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Batal</button>
-                    <form action="/pengajuan/delete/{{ $data->id }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
-                    </form>
-                    </div>
-                </div>
-                </div>
-            </div>
-            @endforeach --}}
+    input.addEventListener('input', function () {
+        const keyword = this.value.toLowerCase();
+
+        rows.forEach(row => {
+            const nim = row.cells[1].textContent.toLowerCase(); // kolom ke-2 = NIM
+            if (!keyword || nim.includes(keyword)) {
+                row.style.display = '';
+                row.parentNode.insertBefore(row, row.parentNode.firstChild); // pindahkan ke atas
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    });
+});
+</script>
+@endpush
 
 @endsection
 

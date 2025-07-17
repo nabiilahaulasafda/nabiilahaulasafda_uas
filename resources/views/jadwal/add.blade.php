@@ -1,17 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-    <title>ADD</title>
-</head>
-<body>
-    <div class="container center col-6">
-        <div class="card mt-4">
-            <div class="card-header text-center">
-                  <h2> USER X </h2>
+@extends('layouts.template')
+@section('title')
+    Halaman Data Jadwal
+@endsection
+
+@section('headline')
+    DAFTAR JADWAL
+@endsection
+
+@section('content')
+    <div class="card ">
+        <div class="card-header text-center bg-light">
+                  <h2> FORM DATA JADWAL </h2>
             </div>
             <div class="card-body">
                 <div class="row g-3 ">
@@ -73,7 +72,7 @@
                 <label class="form-label">Jumat</label>
                 <input type="text" name="jumat" class="form-control">
             </div>
-            <div class="d-flex justify-content-between">
+            <div class="text-end">
                 <a href="/jadwal" class="btn btn-outline-secondary">Tutup</a>
                 <button type="submit" class="btn btn-primary">Tambah</button>
             </div>
@@ -85,6 +84,4 @@
                     </div>
                 </div>
         </div>
-    </div>
-</body>
-</html>
+@endsection

@@ -1,16 +1,16 @@
 @extends('layouts.template')
 @section('title')
-    Halaman Data Jadwal
+    Halaman Data Sertifikat
 @endsection
 
 @section('headline')
-    DAFTAR JADWAL
+    DAFTAR SERTIFIKAT
 @endsection
 
 @section('content')
     <div class="card ">
         <div class="card-header text-center bg-light">
-            <h2>EDIT DATA JADWAL</h2>
+            <h2>EDIT DATA SERTIFIKAT</h2>
         </div>
         <div class="card-body">
             <form method="POST" action="/sertifikat/{{ $sertifikat->id }}" enctype="multipart/form-data">

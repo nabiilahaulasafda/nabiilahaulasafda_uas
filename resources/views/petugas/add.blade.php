@@ -1,16 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href={{asset('css/bootstrap.min.css')}}>
-    <title>TAMBAH <span class="oi oi[data-glyph=account-login]"></span></title>
-</head>
-<body>
-    <div class="container center col-6 ">
-        <div class="card mt-4">
-            <div class="card-header text-center">
+@extends('layouts.template')
+@section('title')
+    Halaman Data Petugas
+@endsection
+
+@section('headline')
+    DAFTAR PETUGAS
+@endsection
+
+@section('content')
+    <div class="card ">
+        <div class="card-header text-center bg-light">
                   <h2> DATA PETUGAS </h2>
             </div>
             <div class="card-body">
@@ -30,8 +29,8 @@
                         <input type="text" name="jabatan_petugas" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Jabatan Petugas">
                     </div>
                     <div class="text-end">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon2"> <a class="nav-link" href="/petugas">  Tutup  </a> </button>
-                        <button type="submit" class="btn btn-outline-secondary">Submit</button>
+                        <a href="/petugas" class="btn btn-outline-secondary">Tutup</a>
+                                    <button type="submit" class="btn btn-primary">Tambah</button>
                     </div>
                      </form>
                 </div>
@@ -39,5 +38,4 @@
         </div>
     </div>
     </div>
-</body>
-</html>
+@endsection

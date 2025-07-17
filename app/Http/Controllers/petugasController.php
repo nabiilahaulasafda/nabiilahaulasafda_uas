@@ -47,8 +47,6 @@ class petugasController extends Controller
     public function show(string $id)
     {
         //
-        $petugas = Petugas::find($id); // cari data berdasarkan id
-        return view('petugas.open', compact('petugas'));
     }
 
     /**
