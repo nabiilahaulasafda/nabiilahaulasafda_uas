@@ -57,19 +57,36 @@
                     <input type="date" name="tgl_selesaimagang" class="form-control" value="{{ $jadwal->tgl_selesaimagang }}">
                 </div>
 
-                {{-- Input Jadwal (Keterangan Umum) --}}
+                {{-- Input Jadwal --}}
                 <div class="mb-3">
                     <label for="jadwal" class="form-label">Keterangan Jadwal</label>
-                    <input type="text" name="jadwal" class="form-control" value="{{ $jadwal->jadwal }}">
+                    <select name="jadwal" class="form-control">
+                        <option value="">-- Pilih Jadwal --</option>
+                        <option value="08:15 -  12:00" {{ $jadwal->jadwal == '08:15 -  12:00' ? 'selected' : '' }}>08:15 -  12:00</option>
+                        <option value="13:30 -  16:45" {{ $jadwal->jadwal == '13:30 -  16:45' ? 'selected' : '' }}>13:30 -  16:45</option>
+                    </select>
                 </div>
 
+
                 {{-- Hari-hari --}}
-                @foreach(['senin','selasa','rabu','kamis','jumat'] as $hari)
-                    <div class="mb-3">
-                        <label for="{{ $hari }}" class="form-label">{{ ucfirst($hari) }}</label>
-                        <input type="text" name="{{ $hari }}" class="form-control" value="{{ $jadwal->$hari }}">
-                    </div>
-                @endforeach
+                @php
+    $pilihanRuangan = ['Ruang 1', 'Ruang 2', 'Ruang 3', 'Ruang 4', 'Ruang 5'];
+@endphp
+
+@foreach(['senin','selasa','rabu','kamis','jumat'] as $hari)
+    <div class="mb-3">
+        <label for="{{ $hari }}" class="form-label">{{ ucfirst($hari) }}</label>
+        <select name="{{ $hari }}" class="form-control">
+            <option value="">-- Pilih Ruangan --</option>
+            @foreach($pilihanRuangan as $ruangan)
+                <option value="{{ $ruangan }}" {{ $jadwal->$hari == $ruangan ? 'selected' : '' }}>
+                    {{ $ruangan }}
+                </option>
+            @endforeach
+        </select>
+    </div>
+@endforeach
+
 
                 <div class="text-end">
                     <a href="/jadwal" class="btn btn-outline-secondary">Tutup</a>

@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\berandaController;
 use App\Http\Controllers\pengajuanController;
 use App\Http\Controllers\jadwalController;
 use App\Http\Controllers\sertifikatController;
 use App\Http\Controllers\petugasController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,9 +18,9 @@ use App\Http\Controllers\petugasController;
 |
 */
 
-Route::get('/', function () {
-    return view('beranda.index');
-})->middleware('auth');;
+// Route::get('/', function () {
+//     return view('home');
+// })->middleware('auth');;
 
 // Route::get('/home', function () {
 //     return view('home');
@@ -33,13 +33,11 @@ Route::get('/', function () {
 // Route::get('/x', function () {
 //     return view('jadwal.open');
 // });
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-// Data Beranda
-Route::get('/beranda', [berandaController::class, 'index']);
 
 // Data Pengajuan
 Route::get('/pengajuan', [pengajuanController::class, 'index']);

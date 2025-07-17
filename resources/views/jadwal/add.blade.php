@@ -46,31 +46,70 @@
                 <input type="date" name="tgl_selesaimagang" class="form-control">
             </div>
             <div class="mb-3">
-                <label class="form-label">Jadwal</label>
-                <input type="text" name="jadwal" class="form-control">
-            </div>
+                    <label for="jadwal" class="form-label">Keterangan Jadwal</label>
+                    <select name="jadwal" class="form-control">
+                        <option value="jadwal">-- Pilih Jadwal --</option>
+                        <option value="08:15 -  12:00">08:15 -  12:00</option>
+                        <option value="13:30 -  16:45">13:30 -  16:45</option>
+                    </select>
+                </div>
         </div>
 
         <div class="col mt-3 mx-3">
             <div class="mb-3">
                 <label class="form-label">Senin</label>
-                <input type="text" name="senin" class="form-control">
+                <select name="senin" class="form-control">
+                        <option value="jadwal">-- Pilih Ruangan --</option>
+                        <option value="Ruang 1">Ruang 1</option>
+                        <option value="Ruang 2">Ruang 2</option>
+                        <option value="Ruang 3">Ruang 3</option>
+                        <option value="Ruang 4">Ruang 4</option>
+                        <option value="Ruang 5">Ruang 5</option>
+                    </select>
             </div>
             <div class="mb-3">
                 <label class="form-label">Selasa</label>
-                <input type="text" name="selasa" class="form-control">
+                <select name="selasa" class="form-control">
+                        <option value="jadwal">-- Pilih Ruangan --</option>
+                        <option value="Ruang 1">Ruang 1</option>
+                        <option value="Ruang 2">Ruang 2</option>
+                        <option value="Ruang 3">Ruang 3</option>
+                        <option value="Ruang 4">Ruang 4</option>
+                        <option value="Ruang 5">Ruang 5</option>
+                    </select>
             </div>
             <div class="mb-3">
                 <label class="form-label">Rabu</label>
-                <input type="text" name="rabu" class="form-control">
+                <select name="rabu" class="form-control">
+                        <option value="jadwal">-- Pilih Ruangan --</option>
+                        <option value="Ruang 1">Ruang 1</option>
+                        <option value="Ruang 2">Ruang 2</option>
+                        <option value="Ruang 3">Ruang 3</option>
+                        <option value="Ruang 4">Ruang 4</option>
+                        <option value="Ruang 5">Ruang 5</option>
+                    </select>
             </div>
             <div class="mb-3">
                 <label class="form-label">Kamis</label>
-                <input type="text" name="kamis" class="form-control">
+                <select name="kamis" class="form-control">
+                        <option value="jadwal">-- Pilih Ruangan --</option>
+                        <option value="Ruang 1">Ruang 1</option>
+                        <option value="Ruang 2">Ruang 2</option>
+                        <option value="Ruang 3">Ruang 3</option>
+                        <option value="Ruang 4">Ruang 4</option>
+                        <option value="Ruang 5">Ruang 5</option>
+                    </select>
             </div>
             <div class="mb-3">
                 <label class="form-label">Jumat</label>
-                <input type="text" name="jumat" class="form-control">
+                <select name="jumat" class="form-control">
+                        <option value="jadwal">-- Pilih Ruangan --</option>
+                        <option value="Ruang 1">Ruang 1</option>
+                        <option value="Ruang 2">Ruang 2</option>
+                        <option value="Ruang 3">Ruang 3</option>
+                        <option value="Ruang 4">Ruang 4</option>
+                        <option value="Ruang 5">Ruang 5</option>
+                    </select>
             </div>
             <div class="text-end">
                 <a href="/jadwal" class="btn btn-outline-secondary">Tutup</a>

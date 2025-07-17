@@ -1,58 +1,67 @@
 @extends('layouts.template')
+
 @section('title')
-    Halaman Beranda
+    Dashboard Admin
 @endsection
 
 @section('headline')
-    BERANDA
+    Dashboard
 @endsection
 
 @section('content')
-<div class="card">
-        <div class="card-header text-center">
-        <div class="card-body">
-                <h1>HALO ADMIN!</h1>
-                <p><strong>Tanggal:</strong> <span id="date"></span></p>
+<div class="card border-0 shadow-sm rounded-4">
+    <div class="card-body px-5 py-4">
 
+        {{-- Sapaan --}}
+        <div class="mb-4">
+            <h3 class="fw-semibold mb-0">Halo, Admin 👋</h3>
+            <small class="text-muted">Hari ini <span id="todayDate"></span></small>
+        </div>
 
-            <!-- Cuaca & Tanggal langsung di background -->
-            <div class="weather-box">
-
+        {{-- Statistik Singkat --}}
+        <div class="row text-center">
+            <div class="col-md-4 mb-3">
+                <a href="{{ url('/pengajuan') }}" class="text-decoration-none text-dark">
+                    <div class="p-4 bg-light rounded-3 shadow-sm h-100">
+                        <i data-feather="file-text" class="mb-2"></i>
+                        <div class="fw-semibold">Pengajuan</div>
+                        <small class="text-muted">{{ $totalPengajuan }} Data</small>
+                    </div>
+                </a>
             </div>
-
-            <div class="mx-5">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            <div class="col-md-4 mb-3">
+                <a href="{{ url('/jadwal') }}" class="text-decoration-none text-dark">
+                    <div class="p-4 bg-light rounded-3 shadow-sm h-100">
+                        <i data-feather="calendar" class="mb-2"></i>
+                        <div class="fw-semibold">Jadwal</div>
+                        <small class="text-muted">{{ $totalJadwal }} Agenda</small>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mb-3">
+                <a href="{{ url('/sertifikat') }}" class="text-decoration-none text-dark">
+                    <div class="p-4 bg-light rounded-3 shadow-sm h-100">
+                        <i data-feather="award" class="mb-2"></i>
+                        <div class="fw-semibold">Sertifikat</div>
+                        <small class="text-muted">{{ $totalSertifikat }} Terbit</small>
+                    </div>
+                </a>
             </div>
         </div>
-         </div>
-    </div>
 
-<script src={{ asset('js/app.js') }}></script>
-<script src={{ asset('js/all.js') }}></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-@endsection
-
-
-{{-- @extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
     </div>
 </div>
-@endsection --}}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const today = new Date().toLocaleDateString('id-ID', {
+            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+        });
+        document.getElementById('todayDate').textContent = today;
+
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
+    });
+</script>
+@endsection

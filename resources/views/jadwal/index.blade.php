@@ -64,6 +64,11 @@
                                                             <tr><td>Nama Mahasiswa</td><td>: {{optional ($data->pengajuans)->nama_mahasiswa}}</td></tr>
                                                             <tr><td>Tanggal Mulai Magang</td><td>: {{ $data->tgl_mulaimagang }}</td></tr>
                                                             <tr><td>Tanggal Selesai Magang</td><td>: {{ $data->tgl_selesaimagang }}</td></tr>
+                                                            <tr><td>Senin</td><td>: {{ $data->senin }}</td></tr>
+                                                            <tr><td>Selasa</td><td>: {{ $data->selasa }}</td></tr>
+                                                            <tr><td>Rabu</td><td>: {{ $data->rabu }}</td></tr>
+                                                            <tr><td>Kamis</td><td>: {{ $data->kamis }}</td></tr>
+                                                            <tr><td>Jumat</td><td>: {{ $data->jumat }}</td></tr>
                                                         </table>
                                                     </div>
                                                     <div class="modal-footer">

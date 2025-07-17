@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pengajuan;
+use App\Models\Jadwal;
+use App\Models\Sertifikat;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $totalPengajuan = Pengajuan::count();
+        $totalJadwal = Jadwal::count();
+        $totalSertifikat = Sertifikat::count();
+
+    return view('home', compact('totalPengajuan', 'totalJadwal', 'totalSertifikat'));
     }
 }

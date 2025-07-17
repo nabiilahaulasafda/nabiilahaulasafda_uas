@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,9 +26,12 @@
 
     <style>
     main.content {
-    background-color: #737e864e !important;
-    min-height: calc(100vh - 120px);
-}
+    background-image: url('{{ asset('img/tmp.jpg') }}');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    }
 
     .card-body {
         padding: 2rem;
@@ -41,9 +43,9 @@
 	<div class="wrapper">
 		<nav id="sidebar" class="sidebar js-sidebar">
 			<div class="sidebar-content js-simplebar">
-				<a class="sidebar-brand" href="index.html">
+				<a class="sidebar-brand" href="#">
                     <div></div>
-                    <img src={{ asset('img/lgoo.png') }} alt="Logo" class="rounded mx-auto d-block" width="50" height="50">  <div class="text-center"> Dewan Perwakilan Rakyat Aceh </div>
+                    <img src={{ asset('img/dpra.png') }} alt="Logo" class="rounded mx-auto d-block" width="150" height="150">  <div class="text-center"> Dewan Perwakilan Rakyat Aceh </div>
                 </a>
 
 				<ul class="sidebar-nav">
@@ -75,31 +77,22 @@
             </a>
 					</li>
 					<li class="sidebar-item {{ request()->is('petugas') ? 'active' : '' }}">
-						<a class="sidebar-link" href="/petugas">
-              <i class="fa-solid fa-user"></i><span class="align-middle">Petugas</span>
-            </a>
-					</li>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="{{ route('logout') }}"
-                            dd commentMore actions
-                                    onclick="event.preventDefault();
-                                          document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                        <i class="fa-solid fa-user"></i><span class="align-start"></span>
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                        </form>
-					</li>
+    <a class="sidebar-link" href="/petugas">
+        <i class="align-middle" data-feather="users"></i> <span class="align-middle">Petugas</span>
+    </a>
+</li>
+                   <div class="mt-auto"></div>
+
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="{{ route('logout') }}"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <i class="align-middle" data-feather="log-out"></i>
+                        <span class="align-middle">Logout</span>
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </li>
 				</ul>
 
 			</div>
