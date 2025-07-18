@@ -27,7 +27,12 @@
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Jabatan Petugas</label>
-                        <input type="text" type="text" value="{{ $petugas->jabatan_petugas }}" name="jabatan_petugas" class="form-control" id="exampleInputEmail1">
+                        <select name="jabatan_petugas" class="form-control">
+                        <option value="">-- Pilih Jabatan --</option>
+                        <option value="Kepala Bagian Umum" {{ $petugas->jabatan_petugas == 'Kepala Bagian Umum' ? 'selected' : '' }}>Kepala Bagian Umum</option>
+                        <option value="Kepala Sub Bagian Umum" {{ $petugas->jabatan_petugas == 'Kepala Sub Bagian Umum' ? 'selected' : '' }}>Kepala Sub Bagian Umum</option>
+                        <option value="Kepala Sub Bagian Pelaporan" {{ $petugas->jabatan_petugas == 'Kepala Sub Bagian Pelaporan' ? 'selected' : '' }}>Kepala Sub Bagian Pelaporan</option>
+                        </select>
                     </div>
                     <div class="text-end">
                         <button class="btn btn-outline-secondary" type="button" id="button-addon2"> <a class="nav-link" href="/petugas">  Tutup  </a> </button>

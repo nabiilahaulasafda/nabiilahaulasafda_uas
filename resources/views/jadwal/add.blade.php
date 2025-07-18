@@ -60,55 +60,55 @@
                 <label class="form-label">Senin</label>
                 <select name="senin" class="form-control">
                         <option value="jadwal">-- Pilih Ruangan --</option>
-                        <option value="Ruang 1">Ruang 1</option>
-                        <option value="Ruang 2">Ruang 2</option>
-                        <option value="Ruang 3">Ruang 3</option>
-                        <option value="Ruang 4">Ruang 4</option>
-                        <option value="Ruang 5">Ruang 5</option>
+                        <option value="Bagian Umum">Bagian Umum</option>
+                        <option value="Bagian Program">Bagian Program</option>
+                        <option value="Bagian Persidangan dan Perundang-undangan">Bagian Persidangan dan Perundang-undangan</option>
+                        <option value="Bagian Fasilitasi Penganggaran Pengawasan">Bagian Fasilitasi Penganggaran Pengawasan</option>
+                        <option value="Bagian Keuangan">Bagian Keuangan</option>
                     </select>
             </div>
             <div class="mb-3">
                 <label class="form-label">Selasa</label>
                 <select name="selasa" class="form-control">
                         <option value="jadwal">-- Pilih Ruangan --</option>
-                        <option value="Ruang 1">Ruang 1</option>
-                        <option value="Ruang 2">Ruang 2</option>
-                        <option value="Ruang 3">Ruang 3</option>
-                        <option value="Ruang 4">Ruang 4</option>
-                        <option value="Ruang 5">Ruang 5</option>
+                        <option value="Bagian Umum">Bagian Umum</option>
+                        <option value="Bagian Program">Bagian Program</option>
+                        <option value="Bagian Persidangan dan Perundang-undangan">Bagian Persidangan dan Perundang-undangan</option>
+                        <option value="Bagian Fasilitasi Penganggaran Pengawasan">Bagian Fasilitasi Penganggaran Pengawasan</option>
+                        <option value="Bagian Keuangan">Bagian Keuangan</option>
                     </select>
             </div>
             <div class="mb-3">
                 <label class="form-label">Rabu</label>
                 <select name="rabu" class="form-control">
                         <option value="jadwal">-- Pilih Ruangan --</option>
-                        <option value="Ruang 1">Ruang 1</option>
-                        <option value="Ruang 2">Ruang 2</option>
-                        <option value="Ruang 3">Ruang 3</option>
-                        <option value="Ruang 4">Ruang 4</option>
-                        <option value="Ruang 5">Ruang 5</option>
+                        <option value="Bagian Umum">Bagian Umum</option>
+                        <option value="Bagian Program">Bagian Program</option>
+                        <option value="Bagian Persidangan dan Perundang-undangan">Bagian Persidangan dan Perundang-undangan</option>
+                        <option value="Bagian Fasilitasi Penganggaran Pengawasan">Bagian Fasilitasi Penganggaran Pengawasan</option>
+                        <option value="Bagian Keuangan">Bagian Keuangan</option>
                     </select>
             </div>
             <div class="mb-3">
                 <label class="form-label">Kamis</label>
                 <select name="kamis" class="form-control">
                         <option value="jadwal">-- Pilih Ruangan --</option>
-                        <option value="Ruang 1">Ruang 1</option>
-                        <option value="Ruang 2">Ruang 2</option>
-                        <option value="Ruang 3">Ruang 3</option>
-                        <option value="Ruang 4">Ruang 4</option>
-                        <option value="Ruang 5">Ruang 5</option>
+                        <option value="Bagian Umum">Bagian Umum</option>
+                        <option value="Bagian Program">Bagian Program</option>
+                        <option value="Bagian Persidangan dan Perundang-undangan">Bagian Persidangan dan Perundang-undangan</option>
+                        <option value="Bagian Fasilitasi Penganggaran Pengawasan">Bagian Fasilitasi Penganggaran Pengawasan</option>
+                        <option value="Bagian Keuangan">Bagian Keuangan</option>
                     </select>
             </div>
             <div class="mb-3">
                 <label class="form-label">Jumat</label>
                 <select name="jumat" class="form-control">
                         <option value="jadwal">-- Pilih Ruangan --</option>
-                        <option value="Ruang 1">Ruang 1</option>
-                        <option value="Ruang 2">Ruang 2</option>
-                        <option value="Ruang 3">Ruang 3</option>
-                        <option value="Ruang 4">Ruang 4</option>
-                        <option value="Ruang 5">Ruang 5</option>
+                        <option value="Bagian Umum">Bagian Umum</option>
+                        <option value="Bagian Program">Bagian Program</option>
+                        <option value="Bagian Persidangan dan Perundang-undangan">Bagian Persidangan dan Perundang-undangan</option>
+                        <option value="Bagian Fasilitasi Penganggaran Pengawasan">Bagian Fasilitasi Penganggaran Pengawasan</option>
+                        <option value="Bagian Keuangan">Bagian Keuangan</option>
                     </select>
             </div>
             <div class="text-end">

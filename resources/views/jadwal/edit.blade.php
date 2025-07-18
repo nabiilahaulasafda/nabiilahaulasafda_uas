@@ -70,7 +70,7 @@
 
                 {{-- Hari-hari --}}
                 @php
-    $pilihanRuangan = ['Ruang 1', 'Ruang 2', 'Ruang 3', 'Ruang 4', 'Ruang 5'];
+    $pilihanRuangan = ['Bagian Umum', 'Bagian Program', 'Bagian Persidangan dan Perundang-undangan', 'Bagian Fasilitasi Penganggaran Pengawasan', 'Bagian Keuangan'];
 @endphp
 
 @foreach(['senin','selasa','rabu','kamis','jumat'] as $hari)

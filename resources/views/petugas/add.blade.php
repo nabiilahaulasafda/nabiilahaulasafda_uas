@@ -26,7 +26,12 @@
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Jabatan Petugas</label>
-                        <input type="text" name="jabatan_petugas" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Jabatan Petugas">
+                        <select name="jabatan_petugas" class="form-control">
+                        <option value="">-- Pilih Jabatan --</option>
+                        <option value="Kepala Bagian Umum">Kepala Bagian Umum</option>
+                        <option value="Kepala Sub Bagian Umum">Kepala Sub Bagian Umum</option>
+                        <option value="Kepala Sub Bagian Pelaporan">Kepala Sub Bagian Pelaporan</option>
+                    </select>
                     </div>
                     <div class="text-end">
                         <a href="/petugas" class="btn btn-outline-secondary">Tutup</a>
