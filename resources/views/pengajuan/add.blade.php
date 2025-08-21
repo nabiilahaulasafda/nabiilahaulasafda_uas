@@ -54,7 +54,7 @@
                     </div>
                     <div class="text-end">
                         <a href="/pengajuan" class="btn btn-outline-secondary">Tutup</a>
-                                    <button type="submit" class="btn btn-primary">Tambah</button>
+                        <button type="submit" class="btn btn-primary">Tambah</button>
                     </div>
                      </form>
                 </div>
